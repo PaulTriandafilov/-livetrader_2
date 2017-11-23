@@ -1,0 +1,4 @@
+:schedule:
+  bot:
+    cron: '*/5 * * * *'   # Runs once per 5 minute
+    class: RunTestRakeWorker

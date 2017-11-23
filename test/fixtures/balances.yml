@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  symbol: MyString
+  count: 1.5
+  balance: 1.5
+
+two:
+  symbol: MyString
+  count: 1.5
+  balance: 1.5
