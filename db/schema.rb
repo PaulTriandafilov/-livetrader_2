@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171122183655) do
+ActiveRecord::Schema.define(version: 20171124125848) do
 
   create_table "balances", force: :cascade do |t|
     t.string "symbol"
@@ -22,6 +22,22 @@ ActiveRecord::Schema.define(version: 20171122183655) do
 
   create_table "bitcoins", force: :cascade do |t|
     t.float "count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "buy_orders", force: :cascade do |t|
+    t.string "currency_pair"
+    t.float "count"
+    t.float "price"
+    t.boolean "is_done"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subscribers", force: :cascade do |t|
+    t.integer "chat_id"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
