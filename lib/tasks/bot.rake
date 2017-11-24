@@ -58,11 +58,12 @@ namespace :bot do
           unless buy_transaction.nil?
             bought_by = buy_transaction.price
             current_ask = currency_info("#{cur["currency"]}/BTC")["best_ask"] - SATOSHI
+            price = sprintf("%.8f", current_ask).to_f
 
             if ((current_ask - bought_by)/bought_by * 100) > MIN_PROFIT
-              resp = sell_order("#{cur["currency"]}/BTC", current_ask, buy_transaction.count)
+              resp = sell_order("#{cur["currency"]}/BTC", price, buy_transaction.count)
               if resp["success"]
-                results[:sold] << "- Поставил ордер на продажу #{cur["currency"]} по цене #{current_ask}"
+                results[:sold] << "- Поставил ордер на продажу #{cur["currency"]} по цене #{price}"
               else
                 results[:sold] << "ERROR: не смог поставить ордер на продажу #{cur["currency"]}: #{resp["exception"]}"
               end
@@ -80,16 +81,18 @@ namespace :bot do
 
           if current_btc_balance > MIN_ORDER_PRICE && available_coins.count < pairs_trade
             bid_price = currency_info(pair)["best_bid"] + SATOSHI
-            quantity = MIN_ORDER_PRICE / bid_price
+            price = sprintf("%.8f", bid_price).to_f
 
-            resp = buy_order(pair, bid_price, quantity)
+            quantity = MIN_ORDER_PRICE / price
+
+            resp = buy_order(pair, price, quantity)
 
             if resp["success"]
-              BuyOrder.create(currency_pair: pair, count: quantity, price: bid_price, is_done: false)
+              BuyOrder.create(currency_pair: pair, count: quantity, price: price, is_done: false)
               current_btc_balance = current_btc_balance - 1.0018 * MIN_ORDER_PRICE
               pairs_trade = pairs_trade + 1
 
-              results[:bought] << "- Поставил ордер на покупку #{pair} по цене #{bid_price} в кол-ве #{quantity}"
+              results[:bought] << "- Поставил ордер на покупку #{pair} по цене #{price} в кол-ве #{quantity}"
             else
               results[:bought] << "ERROR: не смог поставить ордер на покупку #{pair}: #{resp["exception"]}"
             end

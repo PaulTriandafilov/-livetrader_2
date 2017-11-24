@@ -10,10 +10,11 @@ module LiveHelper
   API_KEY = "bsTGqan5wbXXTvKHq14GYSdB3GmEdPBr"
   SECRET_KEY = "7AhKzGKUeSSZu6TxHYEZfVn6wjyuS3zW"
 
+  BTC_INIT = 	0.00186976 # (0.00111841)
   SATOSHI = 0.00000001
   TRADE_PAIRS_COUNT = 5
   MIN_CURRENCY_PRICE = 0.00001 # 1000 satoshi
-  MIN_ORDER_PRICE = 0.0001 # 10000 satoshi
+  MIN_ORDER_PRICE = 0.00015 # 10000 satoshi
   MIN_PROFIT = 2 # 3%
   LOSS_TIME = 1.day
 
@@ -46,7 +47,6 @@ module LiveHelper
 
     api_get(url)
   end
-
 
   # BALANCE HELPER
   def get_balances(currency="")
