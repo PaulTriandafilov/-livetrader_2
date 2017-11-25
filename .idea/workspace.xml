@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fb78077-6924-421f-b97f-caa2b0c864ec" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/live_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/live_helper.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tg_bot/tg_bot.rb" afterPath="$PROJECT_DIR$/app/tg_bot/tg_bot.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/bot.rake" afterPath="$PROJECT_DIR$/lib/tasks/bot.rake" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users" afterPath="$PROJECT_DIR$/users" />
     </list>
     <ignored path="bot.iws" />
@@ -34,21 +35,35 @@
       <file leaf-file-name="live_helper.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/helpers/live_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.8515625">
-              <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.28125">
+              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
               <folding>
-                <element signature="e#1028#1052#0" expanded="false" />
-                <element signature="e#1116#1312#0" expanded="false" />
-                <element signature="e#1335#1589#0" expanded="false" />
-                <element signature="e#1593#1749#0" expanded="false" />
-                <element signature="e#1772#1919#0" expanded="false" />
-                <element signature="e#1923#2152#0" expanded="false" />
-                <element signature="e#2156#2383#0" expanded="false" />
-                <element signature="e#2387#2581#0" expanded="false" />
-                <element signature="e#2736#2859#0" expanded="false" />
-                <element signature="e#2926#2968#0" expanded="false" />
-                <element signature="e#3429#3471#0" expanded="false" />
-                <element signature="e#3634#3822#0" expanded="false" />
+                <element signature="e#477#1086#0" expanded="false" />
+                <element signature="e#547#587#0" expanded="false" />
+                <element signature="e#605#648#0" expanded="false" />
+                <element signature="e#666#702#0" expanded="false" />
+                <element signature="e#731#882#0" expanded="false" />
+                <element signature="e#902#921#0" expanded="false" />
+                <element signature="e#940#971#0" expanded="false" />
+                <element signature="e#990#1007#0" expanded="false" />
+                <element signature="e#1027#1051#0" expanded="false" />
+                <element signature="e#1672#1868#0" expanded="false" />
+                <element signature="e#1712#1844#0" expanded="false" />
+                <element signature="e#1891#2145#0" expanded="false" />
+                <element signature="e#1925#2139#2" expanded="false" />
+                <element signature="e#2149#2305#0" expanded="false" />
+                <element signature="e#2328#2475#0" expanded="false" />
+                <element signature="e#2479#2708#0" expanded="false" />
+                <element signature="e#2712#2939#0" expanded="false" />
+                <element signature="e#2943#3137#0" expanded="false" />
+                <element signature="e#3165#3689#0" expanded="false" />
+                <element signature="e#3292#3415#0" expanded="false" />
+                <element signature="e#3482#3524#0" expanded="false" />
+                <element signature="e#3530#3683#0" expanded="false" />
+                <element signature="e#3693#4186#0" expanded="false" />
+                <element signature="e#3985#4027#0" expanded="false" />
+                <element signature="e#4033#4180#0" expanded="false" />
+                <element signature="e#4190#4378#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -58,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/lib/tasks/bot.rake">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="126" column="4" selection-start-line="126" selection-start-column="4" selection-end-line="126" selection-end-column="31" />
+              <caret line="114" column="80" selection-start-line="114" selection-start-column="35" selection-end-line="114" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -68,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/app/tg_bot/tg_bot.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+              <caret line="8" column="97" selection-start-line="8" selection-start-column="97" selection-end-line="8" selection-end-column="97" />
               <folding />
             </state>
           </provider>
@@ -92,11 +107,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/helpers/live_helper.rb" />
         <option value="$PROJECT_DIR$/config/sidekiq.yml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/lib/tasks/bot.rake" />
         <option value="$PROJECT_DIR$/app/tg_bot/tg_bot.rb" />
-        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/helpers/live_helper.rb" />
       </list>
     </option>
   </component>
@@ -106,7 +121,7 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
+    <option name="y" value="23" />
     <option name="width" value="1275" />
     <option name="height" value="734" />
   </component>
@@ -401,7 +416,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1275" height="734" extended-state="6" />
+    <frame x="0" y="23" width="1275" height="734" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25790754" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -447,18 +462,32 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1028#1052#0" expanded="false" />
-            <element signature="e#1116#1312#0" expanded="false" />
-            <element signature="e#1335#1589#0" expanded="false" />
-            <element signature="e#1593#1749#0" expanded="false" />
-            <element signature="e#1772#1919#0" expanded="false" />
-            <element signature="e#1923#2152#0" expanded="false" />
-            <element signature="e#2156#2383#0" expanded="false" />
-            <element signature="e#2387#2581#0" expanded="false" />
-            <element signature="e#2736#2859#0" expanded="false" />
-            <element signature="e#2926#2968#0" expanded="false" />
-            <element signature="e#3429#3471#0" expanded="false" />
-            <element signature="e#3634#3822#0" expanded="false" />
+            <element signature="e#477#1086#0" expanded="false" />
+            <element signature="e#547#587#0" expanded="false" />
+            <element signature="e#605#648#0" expanded="false" />
+            <element signature="e#666#702#0" expanded="false" />
+            <element signature="e#731#882#0" expanded="false" />
+            <element signature="e#902#921#0" expanded="false" />
+            <element signature="e#940#971#0" expanded="false" />
+            <element signature="e#990#1007#0" expanded="false" />
+            <element signature="e#1027#1051#0" expanded="false" />
+            <element signature="e#1672#1868#0" expanded="false" />
+            <element signature="e#1712#1844#0" expanded="false" />
+            <element signature="e#1891#2145#0" expanded="false" />
+            <element signature="e#1925#2139#2" expanded="false" />
+            <element signature="e#2149#2305#0" expanded="false" />
+            <element signature="e#2328#2475#0" expanded="false" />
+            <element signature="e#2479#2708#0" expanded="false" />
+            <element signature="e#2712#2939#0" expanded="false" />
+            <element signature="e#2943#3137#0" expanded="false" />
+            <element signature="e#3165#3689#0" expanded="false" />
+            <element signature="e#3292#3415#0" expanded="false" />
+            <element signature="e#3482#3524#0" expanded="false" />
+            <element signature="e#3530#3683#0" expanded="false" />
+            <element signature="e#3693#4186#0" expanded="false" />
+            <element signature="e#3985#4027#0" expanded="false" />
+            <element signature="e#4033#4180#0" expanded="false" />
+            <element signature="e#4190#4378#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -487,22 +516,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/bot.rake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="126" column="4" selection-start-line="126" selection-start-column="4" selection-end-line="126" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/tg_bot/tg_bot.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -511,23 +524,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/tg_bot/tg_bot.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="97" selection-start-line="8" selection-start-column="97" selection-end-line="8" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tasks/bot.rake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="114" column="80" selection-start-line="114" selection-start-column="35" selection-end-line="114" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/live_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8515625">
-          <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.28125">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
           <folding>
-            <element signature="e#1028#1052#0" expanded="false" />
-            <element signature="e#1116#1312#0" expanded="false" />
-            <element signature="e#1335#1589#0" expanded="false" />
-            <element signature="e#1593#1749#0" expanded="false" />
-            <element signature="e#1772#1919#0" expanded="false" />
-            <element signature="e#1923#2152#0" expanded="false" />
-            <element signature="e#2156#2383#0" expanded="false" />
-            <element signature="e#2387#2581#0" expanded="false" />
-            <element signature="e#2736#2859#0" expanded="false" />
-            <element signature="e#2926#2968#0" expanded="false" />
-            <element signature="e#3429#3471#0" expanded="false" />
-            <element signature="e#3634#3822#0" expanded="false" />
+            <element signature="e#477#1086#0" expanded="false" />
+            <element signature="e#547#587#0" expanded="false" />
+            <element signature="e#605#648#0" expanded="false" />
+            <element signature="e#666#702#0" expanded="false" />
+            <element signature="e#731#882#0" expanded="false" />
+            <element signature="e#902#921#0" expanded="false" />
+            <element signature="e#940#971#0" expanded="false" />
+            <element signature="e#990#1007#0" expanded="false" />
+            <element signature="e#1027#1051#0" expanded="false" />
+            <element signature="e#1672#1868#0" expanded="false" />
+            <element signature="e#1712#1844#0" expanded="false" />
+            <element signature="e#1891#2145#0" expanded="false" />
+            <element signature="e#1925#2139#2" expanded="false" />
+            <element signature="e#2149#2305#0" expanded="false" />
+            <element signature="e#2328#2475#0" expanded="false" />
+            <element signature="e#2479#2708#0" expanded="false" />
+            <element signature="e#2712#2939#0" expanded="false" />
+            <element signature="e#2943#3137#0" expanded="false" />
+            <element signature="e#3165#3689#0" expanded="false" />
+            <element signature="e#3292#3415#0" expanded="false" />
+            <element signature="e#3482#3524#0" expanded="false" />
+            <element signature="e#3530#3683#0" expanded="false" />
+            <element signature="e#3693#4186#0" expanded="false" />
+            <element signature="e#3985#4027#0" expanded="false" />
+            <element signature="e#4033#4180#0" expanded="false" />
+            <element signature="e#4190#4378#0" expanded="false" />
           </folding>
         </state>
       </provider>

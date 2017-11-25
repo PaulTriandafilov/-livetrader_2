@@ -2,6 +2,7 @@ require 'telegram/bot'
 require 'pry'
 token = '469426190:AAEmNc3nBLSzAxemTs4ovvTccjM-MSwPUHI'
 
+
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
 
@@ -28,7 +29,6 @@ Telegram::Bot::Client.run(token) do |bot|
         File.open("../../users", "w") {|file| file.puts f }
 
         puts "Unsubscribed #{message.from.first_name}"
-
     end
   end
 end

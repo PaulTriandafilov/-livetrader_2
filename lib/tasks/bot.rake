@@ -109,6 +109,11 @@ namespace :bot do
         results[:current_balance] << "#{balance["currency"]} в кол-ве #{balance["value"]}"
       end
 
+      results[:current_balance] << "--------"
+      btc_balance = get_current_balance_in_btc
+      results[:current_balance] << "ВСЕГО В КОШЕЛЬКЕ #{btc_balance} BTC (БЫЛО #{BTC_INIT})"
+      results[:current_balance] << "НАВАР СОСТАВЛЯЕТ: #{btc_balance - BTC_INIT}"
+
       # TG
       msg = "1. ЗАПУСКАЮСЬ. #{DateTime.now.strftime("%m/%d/%Y at %I:%M%p")} \n --------------- \n"
       results.each do |key, value|

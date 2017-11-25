@@ -10,7 +10,7 @@ module LiveHelper
   API_KEY = "bsTGqan5wbXXTvKHq14GYSdB3GmEdPBr"
   SECRET_KEY = "7AhKzGKUeSSZu6TxHYEZfVn6wjyuS3zW"
 
-  BTC_INIT = 	0.00186976 # (0.00111841)
+  BTC_INIT = 0.00186976 # (0.00111841)
   SATOSHI = 0.00000001
   TRADE_PAIRS_COUNT = 5
   MIN_CURRENCY_PRICE = 0.00001 # 1000 satoshi
@@ -37,7 +37,19 @@ module LiveHelper
 
     ranks.sort_by { |_key, value| -value }[0..TRADE_PAIRS_COUNT-1].to_h
   end
-  
+
+  def get_current_balance_in_btc
+    total_balance = get_balances.select { |cur| cur["type"] == "total" && cur["value"] > 0.0 }
+    total_btc_count = total_balance.find{ |cur| cur["currency"] == "BTC" }["value"]
+
+    total_balance.reject { |cur| cur["currency"] == "BTC"}.reject { |cur| cur["currency"] == "OTN"}.each do |cur|
+      current_cur_prict = currency_info("#{cur["currency"]}/BTC")["last"]
+      current_cur_balance = current_cur_prict * cur["value"]
+      total_btc_count = total_btc_count + current_cur_balance
+    end
+    total_btc_count
+  end
+
   ##### API HELP #####
   def currency_info(currency_name="")
     if currency_name.empty?
