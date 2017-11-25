@@ -24,9 +24,10 @@ module LiveHelper
     data = currency_info
     data.select! { |cur| cur["symbol"].include?("/BTC") }
     data.reject! { |cur| cur["last"] <= MIN_CURRENCY_PRICE }
+    data.reject! { |cur| cur["symbol"] == "OTN/BTC" } # Reject OTN
 
     data.each do |cur|
-      rank = ((cur["best_ask"] - cur["best_bid"]) / cur["best_bid"]) * cur["volume"]
+      rank = ((cur["best_ask"] - cur["best_bid"]) / cur["best_bid"]) * (cur["volume"] * cur["last"])
       ranks[cur["symbol"]] = rank
     end
 

@@ -53,7 +53,7 @@ namespace :bot do
       # 5. For each cur check do we have profit? (sold or wait/remove by LOSS_TIME)
       unless available_coins.empty?
         available_coins.each do |cur|
-          buy_transaction = BuyOrder.where(currency_pair: cur["currency"]).last
+          buy_transaction = BuyOrder.where(currency_pair: "#{cur["currency"]}/BTC").last
 
           unless buy_transaction.nil?
             bought_by = buy_transaction.price
@@ -132,6 +132,7 @@ namespace :bot do
     users.each do |user|
       Telegram::Bot::Client.run(token) do |bot|
         bot.api.send_message(chat_id: user.to_i, text: msg)
+        puts "#{user.to_i} - ok"
       end
     end
 
