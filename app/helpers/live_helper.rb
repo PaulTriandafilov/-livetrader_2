@@ -15,18 +15,11 @@ module LiveHelper
   EXCHANGE = :bittrex
   BTC_INIT = 0.00186976
   SATOSHI = 0.00000001
-  TRADE_PAIRS_COUNT = 10
+  TRADE_PAIRS_COUNT = 12
   MIN_CURRENCY_PRICE = 0.0000001 # 10 satoshi
   MIN_ORDER_PRICE = 0.00015 # 10000 satoshi
   MIN_PROFIT = 2 # 3%
   LOSS_TIME = 1.day
-
-  RESULT = {start: ["1. ЗАПУСКАЮСЬ. #{DateTime.now.strftime("%m/%d/%Y at %I:%M%p")}. #{EXCHANGE.to_s.upcase} \n ---------------"],
-              closed: ["2. ЗАКРЫВАЮ ОРДЕРА:"],
-              sold: ["3. ВЫСТАВЛЯЮ ОРДЕРА НА ПРОДАЖУ:"],
-              bought: ["4. ВЫСТАВЛЯЮ ОРДЕРА НА ПОКУПКУ:"],
-              current_balance: ["5. ТЕКУЩЕЕ ПОЛОЖЕНИЕ ДЕЛ:"]
-  }
 
   def ranking
     ranks = {}
@@ -64,7 +57,8 @@ module LiveHelper
 
       data.select!{ |cur| cur["MarketName"].include?("BTC") }
       data.reject! { |cur| cur["Last"] <= MIN_CURRENCY_PRICE }
-      data.reject! { |cur| cur["MarketName"] == "BTC-OTN" } # Reject OTN
+      data.reject! { |cur| cur["MarketName"] == "OTN-BTC" } # Reject OTN
+      data.reject! { |cur| cur["MarketName"] == "USDT-BTC" } # Reject USDT
 
       data.each do |cur|
         rank = ((cur["Ask"] - cur["Bid"]) / cur["Bid"]) * (cur["BaseVolume"])
@@ -77,7 +71,7 @@ module LiveHelper
 
       limited_ranks = ranks.sort_by { |_key, value| -value }[0..TRADE_PAIRS_COUNT-1].to_h
 
-      limited_ranks.keys.map{|s| s.sub("-", "/")}.zip(limited_ranks.values).to_h
+      limited_ranks.keys.map{|s| s.split("-").reverse.join("/")}.zip(limited_ranks.values).to_h
     else
       err = JSON.parse(res.body)
       raise "Could not make a request: #{err['Error']}"

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3fb78077-6924-421f-b97f-caa2b0c864ec" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/live_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/live_helper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/sidekiq.yml" afterPath="$PROJECT_DIR$/config/sidekiq.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/bot.rake" afterPath="$PROJECT_DIR$/lib/tasks/bot.rake" />
     </list>
     <ignored path="bot.iws" />
@@ -29,32 +30,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="live_helper.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="live_helper.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/helpers/live_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.5234375">
-              <caret line="251" column="7" selection-start-line="251" selection-start-column="7" selection-end-line="251" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="123" column="6" selection-start-line="123" selection-start-column="6" selection-end-line="123" selection-end-column="6" />
               <folding>
-                <element signature="e#907#1516#0" expanded="false" />
-                <element signature="e#1520#2633#0" expanded="false" />
-                <element signature="e#2637#2937#0" expanded="false" />
-                <element signature="e#2941#3067#0" expanded="false" />
-                <element signature="e#3071#3269#0" expanded="false" />
-                <element signature="e#3273#3751#0" expanded="false" />
-                <element signature="e#3512#3725#0" expanded="false" />
-                <element signature="e#4372#4568#0" expanded="false" />
-                <element signature="e#4591#4845#0" expanded="false" />
-                <element signature="e#4625#4839#2" expanded="false" />
-                <element signature="e#4849#5005#0" expanded="false" />
-                <element signature="e#5027#5174#0" expanded="false" />
-                <element signature="e#5178#5404#0" expanded="false" />
-                <element signature="e#5408#5632#0" expanded="false" />
-                <element signature="e#5636#5828#0" expanded="false" />
-                <element signature="e#5856#6380#0" expanded="false" />
-                <element signature="e#6384#6877#0" expanded="false" />
-                <element signature="e#6676#6718#0" expanded="false" />
-                <element signature="e#6724#6871#0" expanded="false" />
-                <element signature="e#6881#7069#0" expanded="false" />
+                <element signature="e#547#1156#0" expanded="false" />
+                <element signature="e#1160#2363#0" expanded="false" />
+                <element signature="e#2367#2667#0" expanded="false" />
+                <element signature="e#2671#2797#0" expanded="false" />
+                <element signature="e#2801#2999#0" expanded="false" />
+                <element signature="e#3003#3481#0" expanded="false" />
+                <element signature="e#3242#3455#0" expanded="false" />
+                <element signature="e#3485#4022#0" expanded="false" />
+                <element signature="e#4321#4575#0" expanded="false" />
+                <element signature="e#4355#4569#2" expanded="false" />
+                <element signature="e#4579#4735#0" expanded="false" />
+                <element signature="e#4757#4904#0" expanded="false" />
+                <element signature="e#4908#5134#0" expanded="false" />
+                <element signature="e#5138#5362#0" expanded="false" />
+                <element signature="e#5366#5558#0" expanded="false" />
+                <element signature="e#5586#6110#0" expanded="false" />
+                <element signature="e#6114#6607#0" expanded="false" />
+                <element signature="e#6406#6448#0" expanded="false" />
+                <element signature="e#6454#6601#0" expanded="false" />
+                <element signature="e#6611#6799#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -64,7 +65,17 @@
         <entry file="file://$PROJECT_DIR$/lib/tasks/bot.rake">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sidekiq.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/sidekiq.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.046875">
+              <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -90,9 +101,9 @@
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/tg_bot/tg_bot.rb" />
+        <option value="$PROJECT_DIR$/app/helpers/live_helper.rb" />
         <option value="$PROJECT_DIR$/config/sidekiq.yml" />
         <option value="$PROJECT_DIR$/lib/tasks/bot.rake" />
-        <option value="$PROJECT_DIR$/app/helpers/live_helper.rb" />
       </list>
     </option>
   </component>
@@ -433,7 +444,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -443,26 +454,26 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#907#1516#0" expanded="false" />
-            <element signature="e#1520#2633#0" expanded="false" />
-            <element signature="e#2637#2937#0" expanded="false" />
-            <element signature="e#2941#3067#0" expanded="false" />
-            <element signature="e#3071#3269#0" expanded="false" />
-            <element signature="e#3273#3751#0" expanded="false" />
-            <element signature="e#3512#3725#0" expanded="false" />
-            <element signature="e#4372#4568#0" expanded="false" />
-            <element signature="e#4591#4845#0" expanded="false" />
-            <element signature="e#4625#4839#2" expanded="false" />
-            <element signature="e#4849#5005#0" expanded="false" />
-            <element signature="e#5027#5174#0" expanded="false" />
-            <element signature="e#5178#5404#0" expanded="false" />
-            <element signature="e#5408#5632#0" expanded="false" />
-            <element signature="e#5636#5828#0" expanded="false" />
-            <element signature="e#5856#6380#0" expanded="false" />
-            <element signature="e#6384#6877#0" expanded="false" />
-            <element signature="e#6676#6718#0" expanded="false" />
-            <element signature="e#6724#6871#0" expanded="false" />
-            <element signature="e#6881#7069#0" expanded="false" />
+            <element signature="e#547#1156#0" expanded="false" />
+            <element signature="e#1160#2363#0" expanded="false" />
+            <element signature="e#2367#2667#0" expanded="false" />
+            <element signature="e#2671#2797#0" expanded="false" />
+            <element signature="e#2801#2999#0" expanded="false" />
+            <element signature="e#3003#3481#0" expanded="false" />
+            <element signature="e#3242#3455#0" expanded="false" />
+            <element signature="e#3485#4022#0" expanded="false" />
+            <element signature="e#4321#4575#0" expanded="false" />
+            <element signature="e#4355#4569#2" expanded="false" />
+            <element signature="e#4579#4735#0" expanded="false" />
+            <element signature="e#4757#4904#0" expanded="false" />
+            <element signature="e#4908#5134#0" expanded="false" />
+            <element signature="e#5138#5362#0" expanded="false" />
+            <element signature="e#5366#5558#0" expanded="false" />
+            <element signature="e#5586#6110#0" expanded="false" />
+            <element signature="e#6114#6607#0" expanded="false" />
+            <element signature="e#6406#6448#0" expanded="false" />
+            <element signature="e#6454#6601#0" expanded="false" />
+            <element signature="e#6611#6799#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -491,14 +502,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/sidekiq.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.046875">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/tg_bot/tg_bot.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -507,40 +510,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/live_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="123" column="6" selection-start-line="123" selection-start-column="6" selection-end-line="123" selection-end-column="6" />
+          <folding>
+            <element signature="e#547#1156#0" expanded="false" />
+            <element signature="e#1160#2363#0" expanded="false" />
+            <element signature="e#2367#2667#0" expanded="false" />
+            <element signature="e#2671#2797#0" expanded="false" />
+            <element signature="e#2801#2999#0" expanded="false" />
+            <element signature="e#3003#3481#0" expanded="false" />
+            <element signature="e#3242#3455#0" expanded="false" />
+            <element signature="e#3485#4022#0" expanded="false" />
+            <element signature="e#4321#4575#0" expanded="false" />
+            <element signature="e#4355#4569#2" expanded="false" />
+            <element signature="e#4579#4735#0" expanded="false" />
+            <element signature="e#4757#4904#0" expanded="false" />
+            <element signature="e#4908#5134#0" expanded="false" />
+            <element signature="e#5138#5362#0" expanded="false" />
+            <element signature="e#5366#5558#0" expanded="false" />
+            <element signature="e#5586#6110#0" expanded="false" />
+            <element signature="e#6114#6607#0" expanded="false" />
+            <element signature="e#6406#6448#0" expanded="false" />
+            <element signature="e#6454#6601#0" expanded="false" />
+            <element signature="e#6611#6799#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/tasks/bot.rake">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/live_helper.rb">
+    <entry file="file://$PROJECT_DIR$/config/sidekiq.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5234375">
-          <caret line="251" column="7" selection-start-line="251" selection-start-column="7" selection-end-line="251" selection-end-column="7" />
-          <folding>
-            <element signature="e#907#1516#0" expanded="false" />
-            <element signature="e#1520#2633#0" expanded="false" />
-            <element signature="e#2637#2937#0" expanded="false" />
-            <element signature="e#2941#3067#0" expanded="false" />
-            <element signature="e#3071#3269#0" expanded="false" />
-            <element signature="e#3273#3751#0" expanded="false" />
-            <element signature="e#3512#3725#0" expanded="false" />
-            <element signature="e#4372#4568#0" expanded="false" />
-            <element signature="e#4591#4845#0" expanded="false" />
-            <element signature="e#4625#4839#2" expanded="false" />
-            <element signature="e#4849#5005#0" expanded="false" />
-            <element signature="e#5027#5174#0" expanded="false" />
-            <element signature="e#5178#5404#0" expanded="false" />
-            <element signature="e#5408#5632#0" expanded="false" />
-            <element signature="e#5636#5828#0" expanded="false" />
-            <element signature="e#5856#6380#0" expanded="false" />
-            <element signature="e#6384#6877#0" expanded="false" />
-            <element signature="e#6676#6718#0" expanded="false" />
-            <element signature="e#6724#6871#0" expanded="false" />
-            <element signature="e#6881#7069#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.046875">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>

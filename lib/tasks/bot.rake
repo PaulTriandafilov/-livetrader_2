@@ -2,10 +2,19 @@ require 'telegram/bot'
 require "#{Rails.root}/app/helpers/live_helper"
 include LiveHelper
 
+
+
 namespace :bot do
 
   desc "test rake task"
   task :run, [:mode] => :environment do |t, args|
+
+    RESULT = {start: ["1. ЗАПУСКАЮСЬ. #{DateTime.now.strftime("%m/%d/%Y at %I:%M%p")}. #{EXCHANGE.to_s.upcase} \n ---------------"],
+              closed: ["2. ЗАКРЫВАЮ ОРДЕРА:"],
+              sold: ["3. ВЫСТАВЛЯЮ ОРДЕРА НА ПРОДАЖУ:"],
+              bought: ["4. ВЫСТАВЛЯЮ ОРДЕРА НА ПОКУПКУ:"],
+              current_balance: ["5. ТЕКУЩЕЕ ПОЛОЖЕНИЕ ДЕЛ:"]
+    }
 
     # 1. Close all existed orders
     # 2. Get all currencies data and calculate trade_pairs
@@ -57,9 +66,9 @@ namespace :bot do
           current_price = sprintf("%.8f", current_ask).to_f
 
           if do_we_have_profit?(bought_data[:price], current_price)
-            resp = sell_order("#{cur["currency"]}/BTC", bought_data[:price], bought_data[:count])
+            resp = sell_order("#{cur["currency"]}/BTC", current_price, bought_data[:count])
             if resp["success"]
-              RESULT[:sold] << "- Поставил ордер на продажу #{cur["currency"]} по цене #{price}"
+              RESULT[:sold] << "- Поставил ордер на продажу #{cur["currency"]} по цене #{current_price}"
             else
               RESULT[:sold] << "ERROR: не смог поставить ордер на продажу #{cur["currency"]}: #{resp["exception"]}"
             end
@@ -76,21 +85,28 @@ namespace :bot do
 
       trade_pairs.each do |pair, _|
         if current_btc_balance > MIN_ORDER_PRICE && available_coins.count < pairs_trade
-          bid_price = currency_info(pair)["best_bid"] + SATOSHI
-          price = sprintf("%.8f", bid_price).to_f
+          resp = currency_info(pair)
+          current_bid = resp["best_bid"]
 
-          quantity = MIN_ORDER_PRICE / price
-
-          resp = buy_order(pair, price, quantity)
-
-          if resp["success"]
-            BuyOrder.create(currency_pair: pair, count: quantity, price: price, is_done: false)
-            current_btc_balance = current_btc_balance - 1.0018 * MIN_ORDER_PRICE
-            pairs_trade = pairs_trade - 1
-
-            RESULT[:bought] << "- Поставил ордер на покупку #{pair} по цене #{price} в кол-ве #{quantity}"
+          if current_bid.nil?
+            RESULT[:bought] << "ERROR: #{pair} - #{resp["errorMessage"]}"
           else
-            RESULT[:bought] << "ERROR: не смог поставить ордер на покупку #{pair}: #{resp["exception"]}"
+            bid_price = current_bid + SATOSHI
+            price = sprintf("%.8f", bid_price).to_f
+
+            quantity = MIN_ORDER_PRICE / price
+
+            resp = buy_order(pair, price, quantity)
+
+            if resp["success"]
+              BuyOrder.create(currency_pair: pair, count: quantity, price: price, is_done: false)
+              current_btc_balance = current_btc_balance - 1.0018 * MIN_ORDER_PRICE
+              pairs_trade = pairs_trade - 1
+
+              RESULT[:bought] << "- Поставил ордер на покупку #{pair} по цене #{price} в кол-ве #{quantity}. #{EXCHANGE.to_s.upcase}"
+            else
+              RESULT[:bought] << "ERROR: не смог поставить ордер на покупку #{pair}: #{resp["exception"]}"
+            end
           end
         end
       end
