@@ -5,18 +5,27 @@ module LiveHelper
   require "net/http"
   require 'net/https'
 
-  API_ROOT = "https://api.livecoin.net"
+  TG_TOKEN = '469426190:AAEmNc3nBLSzAxemTs4ovvTccjM-MSwPUHI'
 
-  API_KEY = "bsTGqan5wbXXTvKHq14GYSdB3GmEdPBr"
-  SECRET_KEY = "7AhKzGKUeSSZu6TxHYEZfVn6wjyuS3zW"
+  API_ROOT = 'https://api.livecoin.net'
 
-  BTC_INIT = 0.00186976 # (0.00111841)
+  API_KEY = 'bsTGqan5wbXXTvKHq14GYSdB3GmEdPBr'
+  SECRET_KEY = '7AhKzGKUeSSZu6TxHYEZfVn6wjyuS3zW'
+
+  BTC_INIT = 0.00186976
   SATOSHI = 0.00000001
-  TRADE_PAIRS_COUNT = 5
-  MIN_CURRENCY_PRICE = 0.00001 # 1000 satoshi
+  TRADE_PAIRS_COUNT = 10
+  MIN_CURRENCY_PRICE = 0.0000001 # 10 satoshi
   MIN_ORDER_PRICE = 0.00015 # 10000 satoshi
   MIN_PROFIT = 2 # 3%
   LOSS_TIME = 1.day
+
+  RESULT = {start: ["1. ЗАПУСКАЮСЬ. #{DateTime.now.strftime("%m/%d/%Y at %I:%M%p")} \n ---------------"],
+              closed: ["2. ЗАКРЫВАЮ ОРДЕРА:"],
+              sold: ["3. ВЫСТАВЛЯЮ ОРДЕРА НА ПРОДАЖУ:"],
+              bought: ["4. ВЫСТАВЛЯЮ ОРДЕРА НА ПОКУПКУ:"],
+              current_balance: ["5. ТЕКУЩЕЕ ПОЛОЖЕНИЕ ДЕЛ:"]
+  }
 
   def ranking
     ranks = {}
@@ -31,26 +40,90 @@ module LiveHelper
       ranks[cur["symbol"]] = rank
     end
 
-    ranks.reject! { |k, v| v == 0.0 }
-    ranks.reject! { |k, v| v == Float::INFINITY }
-    ranks.reject! { |k, v| v.nan? }
+    ranks.reject! { |_, v| v == 0.0 }
+    ranks.reject! { |_, v| v == Float::INFINITY }
+    ranks.reject! { |_, v| v.nan? }
 
     ranks.sort_by { |_key, value| -value }[0..TRADE_PAIRS_COUNT-1].to_h
   end
 
-  def get_current_balance_in_btc
-    total_balance = get_balances.select { |cur| cur["type"] == "total" && cur["value"] > 0.0 }
-    total_btc_count = total_balance.find{ |cur| cur["currency"] == "BTC" }["value"]
+  def ranking_bittrex
+    url = "https://bittrex.com/api/v1.1/public/getmarketsummaries"
+    uri = URI(url)
 
-    total_balance.reject { |cur| cur["currency"] == "BTC"}.reject { |cur| cur["currency"] == "OTN"}.each do |cur|
-      current_cur_prict = currency_info("#{cur["currency"]}/BTC")["last"]
-      current_cur_balance = current_cur_prict * cur["value"]
+    request = Net::HTTP::Get.new(uri)
+
+    res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+      http.request(request)
+    end
+
+    if res.code == "200"
+      data = JSON.parse(res.body)["result"]
+      ranks = {}
+
+      data.select!{ |cur| cur["MarketName"].include?("BTC") }
+      data.reject! { |cur| cur["Last"] <= MIN_CURRENCY_PRICE }
+      data.reject! { |cur| cur["MarketName"] == "BTC-OTN" } # Reject OTN
+
+      data.each do |cur|
+        rank = ((cur["Ask"] - cur["Bid"]) / cur["Bid"]) * (cur["BaseVolume"])
+        ranks[cur["MarketName"]] = rank
+      end
+
+      ranks.reject! { |_, v| v == 0.0 }
+      ranks.reject! { |_, v| v == Float::INFINITY }
+      ranks.reject! { |_, v| v.nan? }
+
+      ranks.sort_by { |_key, value| -value }[0..TRADE_PAIRS_COUNT-1].to_h
+    else
+      err = JSON.parse(res.body)
+      raise "Could not make a request: #{err['Error']}"
+    end
+
+  end
+
+  def close_all_orders(current_orders)
+    current_orders.each do |order|
+      cancel_order(order["currencyPair"], order["id"])
+      RESULT[:closed] << "- Отменил #{order["currencyPair"]} ордер - #{order["type"]}"
+    end
+    RESULT[:closed] << "ИТОГО ОТМЕНЕНО #{current_orders.count} ОРДЕРОВ."
+  end
+
+  def do_we_have_profit?(bought_price, current_price)
+    ((current_price - bought_price)/bought_price * 100) > MIN_PROFIT
+  end
+
+  def get_bought_transaction(cur)
+    transaction = BuyOrder.where(currency_pair: "#{cur["currency"]}/BTC").last
+
+    {price: transaction.price, count: transaction.count} unless transaction.nil?
+  end
+
+  def get_current_balance_in_btc(total_balance)
+    total_btc_count = total_balance.find { |cur| cur["currency"] == "BTC" }["value"]
+
+    total_balance.reject { |cur| cur["currency"] == "BTC" }.reject { |cur| cur["currency"] == "OTN" }.each do |cur|
+      current_cur_price = currency_info("#{cur["currency"]}/BTC")["last"]
+      current_cur_balance = current_cur_price * cur["value"]
       total_btc_count = total_btc_count + current_cur_balance
     end
     total_btc_count
   end
 
-  ##### API HELP #####
+  def current_state_of_wallet
+    total_balance = get_balances.select { |coins| coins["type"] == "total" && coins["value"] > 0.0 }
+    total_balance.each do |balance|
+      RESULT[:current_balance] << "#{balance["currency"]} в кол-ве #{balance["value"]}"
+    end
+
+    RESULT[:current_balance] << "--------"
+    btc_balance = get_current_balance_in_btc(total_balance)
+    RESULT[:current_balance] << "ВСЕГО В КОШЕЛЬКЕ #{btc_balance} BTC (БЫЛО #{BTC_INIT})"
+    RESULT[:current_balance] << "НАВАР СОСТАВЛЯЕТ: #{btc_balance - BTC_INIT}"
+  end
+
+  ############################## API HELPERS ##############################
   def currency_info(currency_name="")
     if currency_name.empty?
       url = "/exchange/ticker"
@@ -79,7 +152,6 @@ module LiveHelper
     api_get(url, true, params)
   end
 
-
   # Orders helper
   def get_current_orders
     params = {"openClosed": "open"}
@@ -90,9 +162,9 @@ module LiveHelper
   def sell_order(currencyPair, price, quantity)
     url = "/exchange/selllimit"
 
-    params = { "currencyPair": currencyPair,
-               "price": price,
-               "quantity": quantity
+    params = {"currencyPair": currencyPair,
+              "price": price,
+              "quantity": quantity
     }
 
     api_post(url, params)
@@ -101,9 +173,9 @@ module LiveHelper
   def buy_order(currencyPair, price, quantity)
     url = "/exchange/buylimit"
 
-    params = { "currencyPair": currencyPair,
-               "price": price,
-               "quantity": quantity
+    params = {"currencyPair": currencyPair,
+              "price": price,
+              "quantity": quantity
     }
 
     api_post(url, params)
@@ -112,8 +184,8 @@ module LiveHelper
   def cancel_order(currencyPair, order_id)
     url = "/exchange/cancellimit"
 
-    params = { "currencyPair": currencyPair,
-               "orderId": order_id
+    params = {"currencyPair": currencyPair,
+              "orderId": order_id
     }
 
     api_post(url, params)
@@ -166,6 +238,32 @@ module LiveHelper
     hz = params.empty? ? "" : URI.encode_www_form(params)
     sha256 = OpenSSL::Digest::SHA256.new
     OpenSSL::HMAC.hexdigest(sha256, SECRET_KEY, hz).upcase
+  end
+
+
+  # TG BOT
+  def send_tg(mode="")
+    msg = ''
+    RESULT.each do |_, value|
+      value.each { |message| msg << message + "\n" }
+    end
+
+    if mode == "test"
+      chat_ids = [291846123]
+    else
+      f = File.open("users", "r")
+      str = f.read
+      f.close
+      users = str.split("\n").uniq
+      chat_ids = users.collect(&:to_i)
+    end
+
+    chat_ids.each do |chat_id|
+      Telegram::Bot::Client.run(TG_TOKEN) do |bot|
+        bot.api.send_message(chat_id: chat_id, text: msg)
+        puts "#{chat_id} - ok"
+      end
+    end
   end
 
 end
