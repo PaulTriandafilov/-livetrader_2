@@ -27,7 +27,12 @@ namespace :bot do
     RESULT[:closed] << "--------"
 
     ############################## 2. Get all currencies data and calculate trade_pairs
-    trade_pairs = ranking
+    case EXCHANGE
+      when :livecoin
+        trade_pairs = ranking
+      when :bittrex
+        trade_pairs = ranking_bittrex
+    end
 
     ############################## 3. Get balance
     current_btc_balance = get_available_balance("BTC")["value"]

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fb78077-6924-421f-b97f-caa2b0c864ec" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/live_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/live_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/sidekiq.yml" afterPath="$PROJECT_DIR$/config/sidekiq.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/bot.rake" afterPath="$PROJECT_DIR$/lib/tasks/bot.rake" />
     </list>
     <ignored path="bot.iws" />
@@ -34,28 +32,29 @@
       <file leaf-file-name="live_helper.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/helpers/live_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.2578125">
-              <caret line="246" column="10" selection-start-line="246" selection-start-column="10" selection-end-line="246" selection-end-column="10" />
+            <state vertical-scroll-proportion="1.5234375">
+              <caret line="251" column="7" selection-start-line="251" selection-start-column="7" selection-end-line="251" selection-end-column="7" />
               <folding>
-                <element signature="e#2796#2922#0" expanded="false" />
-                <element signature="e#2926#3124#0" expanded="false" />
-                <element signature="e#3128#3606#0" expanded="false" />
-                <element signature="e#3367#3580#0" expanded="false" />
-                <element signature="e#4227#4423#0" expanded="false" />
-                <element signature="e#4446#4700#0" expanded="false" />
-                <element signature="e#4480#4694#2" expanded="false" />
-                <element signature="e#4704#4860#0" expanded="false" />
-                <element signature="e#4882#5029#0" expanded="false" />
-                <element signature="e#5033#5259#0" expanded="false" />
-                <element signature="e#5263#5487#0" expanded="false" />
-                <element signature="e#5491#5683#0" expanded="false" />
-                <element signature="e#5711#6235#0" expanded="false" />
-                <element signature="e#6239#6732#0" expanded="false" />
-                <element signature="e#6531#6573#0" expanded="false" />
-                <element signature="e#6579#6726#0" expanded="false" />
-                <element signature="e#6736#6924#0" expanded="false" />
-                <element signature="e#6990#7064#0" expanded="false" />
-                <element signature="e#7021#7056#0" expanded="false" />
+                <element signature="e#907#1516#0" expanded="false" />
+                <element signature="e#1520#2633#0" expanded="false" />
+                <element signature="e#2637#2937#0" expanded="false" />
+                <element signature="e#2941#3067#0" expanded="false" />
+                <element signature="e#3071#3269#0" expanded="false" />
+                <element signature="e#3273#3751#0" expanded="false" />
+                <element signature="e#3512#3725#0" expanded="false" />
+                <element signature="e#4372#4568#0" expanded="false" />
+                <element signature="e#4591#4845#0" expanded="false" />
+                <element signature="e#4625#4839#2" expanded="false" />
+                <element signature="e#4849#5005#0" expanded="false" />
+                <element signature="e#5027#5174#0" expanded="false" />
+                <element signature="e#5178#5404#0" expanded="false" />
+                <element signature="e#5408#5632#0" expanded="false" />
+                <element signature="e#5636#5828#0" expanded="false" />
+                <element signature="e#5856#6380#0" expanded="false" />
+                <element signature="e#6384#6877#0" expanded="false" />
+                <element signature="e#6676#6718#0" expanded="false" />
+                <element signature="e#6724#6871#0" expanded="false" />
+                <element signature="e#6881#7069#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -65,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/lib/tasks/bot.rake">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
+              <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -92,8 +91,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/tg_bot/tg_bot.rb" />
         <option value="$PROJECT_DIR$/config/sidekiq.yml" />
-        <option value="$PROJECT_DIR$/app/helpers/live_helper.rb" />
         <option value="$PROJECT_DIR$/lib/tasks/bot.rake" />
+        <option value="$PROJECT_DIR$/app/helpers/live_helper.rb" />
       </list>
     </option>
   </component>
@@ -444,25 +443,26 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2796#2922#0" expanded="false" />
-            <element signature="e#2926#3124#0" expanded="false" />
-            <element signature="e#3128#3606#0" expanded="false" />
-            <element signature="e#3367#3580#0" expanded="false" />
-            <element signature="e#4227#4423#0" expanded="false" />
-            <element signature="e#4446#4700#0" expanded="false" />
-            <element signature="e#4480#4694#2" expanded="false" />
-            <element signature="e#4704#4860#0" expanded="false" />
-            <element signature="e#4882#5029#0" expanded="false" />
-            <element signature="e#5033#5259#0" expanded="false" />
-            <element signature="e#5263#5487#0" expanded="false" />
-            <element signature="e#5491#5683#0" expanded="false" />
-            <element signature="e#5711#6235#0" expanded="false" />
-            <element signature="e#6239#6732#0" expanded="false" />
-            <element signature="e#6531#6573#0" expanded="false" />
-            <element signature="e#6579#6726#0" expanded="false" />
-            <element signature="e#6736#6924#0" expanded="false" />
-            <element signature="e#6990#7064#0" expanded="false" />
-            <element signature="e#7021#7056#0" expanded="false" />
+            <element signature="e#907#1516#0" expanded="false" />
+            <element signature="e#1520#2633#0" expanded="false" />
+            <element signature="e#2637#2937#0" expanded="false" />
+            <element signature="e#2941#3067#0" expanded="false" />
+            <element signature="e#3071#3269#0" expanded="false" />
+            <element signature="e#3273#3751#0" expanded="false" />
+            <element signature="e#3512#3725#0" expanded="false" />
+            <element signature="e#4372#4568#0" expanded="false" />
+            <element signature="e#4591#4845#0" expanded="false" />
+            <element signature="e#4625#4839#2" expanded="false" />
+            <element signature="e#4849#5005#0" expanded="false" />
+            <element signature="e#5027#5174#0" expanded="false" />
+            <element signature="e#5178#5404#0" expanded="false" />
+            <element signature="e#5408#5632#0" expanded="false" />
+            <element signature="e#5636#5828#0" expanded="false" />
+            <element signature="e#5856#6380#0" expanded="false" />
+            <element signature="e#6384#6877#0" expanded="false" />
+            <element signature="e#6676#6718#0" expanded="false" />
+            <element signature="e#6724#6871#0" expanded="false" />
+            <element signature="e#6881#7069#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -510,35 +510,36 @@
     <entry file="file://$PROJECT_DIR$/lib/tasks/bot.rake">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
+          <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/live_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.2578125">
-          <caret line="246" column="10" selection-start-line="246" selection-start-column="10" selection-end-line="246" selection-end-column="10" />
+        <state vertical-scroll-proportion="1.5234375">
+          <caret line="251" column="7" selection-start-line="251" selection-start-column="7" selection-end-line="251" selection-end-column="7" />
           <folding>
-            <element signature="e#2796#2922#0" expanded="false" />
-            <element signature="e#2926#3124#0" expanded="false" />
-            <element signature="e#3128#3606#0" expanded="false" />
-            <element signature="e#3367#3580#0" expanded="false" />
-            <element signature="e#4227#4423#0" expanded="false" />
-            <element signature="e#4446#4700#0" expanded="false" />
-            <element signature="e#4480#4694#2" expanded="false" />
-            <element signature="e#4704#4860#0" expanded="false" />
-            <element signature="e#4882#5029#0" expanded="false" />
-            <element signature="e#5033#5259#0" expanded="false" />
-            <element signature="e#5263#5487#0" expanded="false" />
-            <element signature="e#5491#5683#0" expanded="false" />
-            <element signature="e#5711#6235#0" expanded="false" />
-            <element signature="e#6239#6732#0" expanded="false" />
-            <element signature="e#6531#6573#0" expanded="false" />
-            <element signature="e#6579#6726#0" expanded="false" />
-            <element signature="e#6736#6924#0" expanded="false" />
-            <element signature="e#6990#7064#0" expanded="false" />
-            <element signature="e#7021#7056#0" expanded="false" />
+            <element signature="e#907#1516#0" expanded="false" />
+            <element signature="e#1520#2633#0" expanded="false" />
+            <element signature="e#2637#2937#0" expanded="false" />
+            <element signature="e#2941#3067#0" expanded="false" />
+            <element signature="e#3071#3269#0" expanded="false" />
+            <element signature="e#3273#3751#0" expanded="false" />
+            <element signature="e#3512#3725#0" expanded="false" />
+            <element signature="e#4372#4568#0" expanded="false" />
+            <element signature="e#4591#4845#0" expanded="false" />
+            <element signature="e#4625#4839#2" expanded="false" />
+            <element signature="e#4849#5005#0" expanded="false" />
+            <element signature="e#5027#5174#0" expanded="false" />
+            <element signature="e#5178#5404#0" expanded="false" />
+            <element signature="e#5408#5632#0" expanded="false" />
+            <element signature="e#5636#5828#0" expanded="false" />
+            <element signature="e#5856#6380#0" expanded="false" />
+            <element signature="e#6384#6877#0" expanded="false" />
+            <element signature="e#6676#6718#0" expanded="false" />
+            <element signature="e#6724#6871#0" expanded="false" />
+            <element signature="e#6881#7069#0" expanded="false" />
           </folding>
         </state>
       </provider>
