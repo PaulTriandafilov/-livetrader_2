@@ -117,10 +117,10 @@ module LiveHelper
       else
         current_ask = currency_info("#{balance["currency"]}/BTC")["best_ask"] - SATOSHI
         current_price = sprintf("%.8f", current_ask).to_f
-        profit = (current_price - bought_data[:price])/bought_data[:price] * 100
+        profit = ((current_price - bought_data[:price])/bought_data[:price] * 100).round(2)
       end
 
-      RESULT[:current_balance] << "#{balance["currency"]} в кол-ве #{balance["value"]} (#{profit.round(2)})"
+      RESULT[:current_balance] << "#{balance["currency"]} в кол-ве #{balance["value"]} (#{profit}%)"
     end
 
     RESULT[:current_balance] << "--------"
