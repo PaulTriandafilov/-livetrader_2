@@ -15,10 +15,10 @@ module LiveHelper
   EXCHANGE = :bittrex
   BTC_INIT = 0.00186976
   SATOSHI = 0.00000001
-  TRADE_PAIRS_COUNT = 12
+  TRADE_PAIRS_COUNT = 7
   MIN_CURRENCY_PRICE = 0.0000001 # 10 satoshi
   MIN_ORDER_PRICE = 0.00015 # 10000 satoshi
-  MIN_PROFIT = 2 # 3%
+  MIN_PROFIT = 1.5 # 3%
   LOSS_TIME = 1.day
 
   def ranking
@@ -111,7 +111,16 @@ module LiveHelper
   def current_state_of_wallet
     total_balance = get_balances.select { |coins| coins["type"] == "total" && coins["value"] > 0.0 }
     total_balance.each do |balance|
-      RESULT[:current_balance] << "#{balance["currency"]} в кол-ве #{balance["value"]}"
+      bought_data = get_bought_transaction(balance)
+      if bought_data.nil?
+        profit = "-"
+      else
+        current_ask = currency_info("#{balance["currency"]}/BTC")["best_ask"] - SATOSHI
+        current_price = sprintf("%.8f", current_ask).to_f
+        profit = (current_price - bought_data[:price])/bought_data[:price] * 100
+      end
+
+      RESULT[:current_balance] << "#{balance["currency"]} в кол-ве #{balance["value"]} (#{profit.round(2)})"
     end
 
     RESULT[:current_balance] << "--------"
