@@ -162,8 +162,8 @@ module LiveHelper
 
   # Orders helper
   def get_current_orders
-    params = {"openClosed": "open"}
-    url = "/exchange/client_orders?openClosed=open"
+    params = {"openClosed": "OPEN"}
+    url = "/exchange/client_orders?openClosed=OPEN"
     api_get(url, true, params)
   end
 
