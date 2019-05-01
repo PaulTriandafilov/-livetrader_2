@@ -26,8 +26,6 @@ namespace :bot do
 
     ############################## 1. Close all existed orders
     current_orders = get_current_orders["data"]
-                         .reject! { |cur| cur["orderStatus"] == "EXECUTED" }
-                         .reject! { |cur| cur["orderStatus"] == "CANCELLED" }
     if current_orders.nil?
       RESULT[:closed] << "- Открытых ордеров нету"
     else
