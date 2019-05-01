@@ -92,13 +92,11 @@
       <file leaf-file-name="bot.rake" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/tasks/bot.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20408164">
+            <state vertical-scroll-proportion="0.7755102">
               <caret line="124" column="13" selection-start-line="124" selection-start-column="13" selection-end-line="124" selection-end-column="13" />
               <folding>
-                <element signature="e#172#4726#0" expanded="false" />
                 <element signature="e#190#4720#0" expanded="false" />
                 <element signature="e#1037#1079#0" expanded="false" />
-                <element signature="e#1114#1157#0" expanded="false" />
                 <element signature="e#1162#1291#0" expanded="false" />
                 <element signature="e#1420#1550#0" expanded="false" />
                 <element signature="e#1708#1766#0" expanded="false" />
@@ -504,10 +502,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="120" column="8" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="8" />
           <folding>
-            <element signature="e#172#4726#0" expanded="false" />
             <element signature="e#190#4720#0" expanded="false" />
             <element signature="e#1037#1079#0" expanded="false" />
-            <element signature="e#1114#1157#0" expanded="false" />
             <element signature="e#1162#1291#0" expanded="false" />
             <element signature="e#1420#1550#0" expanded="false" />
             <element signature="e#1708#1766#0" expanded="false" />
@@ -621,10 +617,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="120" column="8" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="8" />
           <folding>
-            <element signature="e#172#4726#0" expanded="false" />
             <element signature="e#190#4720#0" expanded="false" />
             <element signature="e#1037#1079#0" expanded="false" />
-            <element signature="e#1114#1157#0" expanded="false" />
             <element signature="e#1162#1291#0" expanded="false" />
             <element signature="e#1420#1550#0" expanded="false" />
             <element signature="e#1708#1766#0" expanded="false" />
@@ -738,10 +732,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="20" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="20" />
           <folding>
-            <element signature="e#172#4726#0" expanded="false" />
             <element signature="e#190#4720#0" expanded="false" />
             <element signature="e#1037#1079#0" expanded="false" />
-            <element signature="e#1114#1157#0" expanded="false" />
             <element signature="e#1162#1291#0" expanded="false" />
             <element signature="e#1420#1550#0" expanded="false" />
             <element signature="e#1708#1766#0" expanded="false" />
@@ -855,10 +847,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="20" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="20" />
           <folding>
-            <element signature="e#172#4726#0" expanded="false" />
             <element signature="e#190#4720#0" expanded="false" />
             <element signature="e#1037#1079#0" expanded="false" />
-            <element signature="e#1114#1157#0" expanded="false" />
             <element signature="e#1162#1291#0" expanded="false" />
             <element signature="e#1420#1550#0" expanded="false" />
             <element signature="e#1708#1766#0" expanded="false" />
@@ -972,10 +962,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="101" column="46" selection-start-line="101" selection-start-column="46" selection-end-line="101" selection-end-column="46" />
           <folding>
-            <element signature="e#172#4726#0" expanded="false" />
             <element signature="e#190#4720#0" expanded="false" />
             <element signature="e#1037#1079#0" expanded="false" />
-            <element signature="e#1114#1157#0" expanded="false" />
             <element signature="e#1162#1291#0" expanded="false" />
             <element signature="e#1420#1550#0" expanded="false" />
             <element signature="e#1708#1766#0" expanded="false" />
@@ -1081,10 +1069,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="101" column="46" selection-start-line="101" selection-start-column="46" selection-end-line="101" selection-end-column="46" />
           <folding>
-            <element signature="e#172#4726#0" expanded="false" />
             <element signature="e#190#4720#0" expanded="false" />
             <element signature="e#1037#1079#0" expanded="false" />
-            <element signature="e#1114#1157#0" expanded="false" />
             <element signature="e#1162#1291#0" expanded="false" />
             <element signature="e#1420#1550#0" expanded="false" />
             <element signature="e#1708#1766#0" expanded="false" />
@@ -1190,10 +1176,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
           <folding>
-            <element signature="e#172#4726#0" expanded="false" />
             <element signature="e#190#4720#0" expanded="false" />
             <element signature="e#1037#1079#0" expanded="false" />
-            <element signature="e#1114#1157#0" expanded="false" />
             <element signature="e#1162#1291#0" expanded="false" />
             <element signature="e#1420#1550#0" expanded="false" />
             <element signature="e#1708#1766#0" expanded="false" />
@@ -1298,10 +1282,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="114" selection-start-line="11" selection-start-column="114" selection-end-line="11" selection-end-column="114" />
           <folding>
-            <element signature="e#172#4726#0" expanded="false" />
             <element signature="e#190#4720#0" expanded="false" />
             <element signature="e#1037#1079#0" expanded="false" />
-            <element signature="e#1114#1157#0" expanded="false" />
             <element signature="e#1162#1291#0" expanded="false" />
             <element signature="e#1420#1550#0" expanded="false" />
             <element signature="e#1708#1766#0" expanded="false" />
@@ -1471,13 +1453,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/tasks/bot.rake">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20408164">
+        <state vertical-scroll-proportion="0.7755102">
           <caret line="124" column="13" selection-start-line="124" selection-start-column="13" selection-end-line="124" selection-end-column="13" />
           <folding>
-            <element signature="e#172#4726#0" expanded="false" />
             <element signature="e#190#4720#0" expanded="false" />
             <element signature="e#1037#1079#0" expanded="false" />
-            <element signature="e#1114#1157#0" expanded="false" />
             <element signature="e#1162#1291#0" expanded="false" />
             <element signature="e#1420#1550#0" expanded="false" />
             <element signature="e#1708#1766#0" expanded="false" />

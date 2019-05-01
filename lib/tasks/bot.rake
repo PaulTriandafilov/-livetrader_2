@@ -123,8 +123,7 @@ namespace :bot do
   end
 
   task :run_2 do
-      Rake::Task['bot:run'].reenable
-      Rake::Task['bot:run'].invoke
-    end
+    Rake::Task['bot:run'].reenable
+    Rake::Task['bot:run'].invoke
   end
 end
