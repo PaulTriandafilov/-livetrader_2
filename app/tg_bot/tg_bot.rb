@@ -1,6 +1,6 @@
 require 'telegram/bot'
 require 'pry'
-token = '469426190:AAEmNc3nBLSzAxemTs4ovvTccjM-MSwPUHI'
+token = '535589013:AAF_Bm3KEcRMpUZ3A7jKN0SJxWGrctIqyGA'
 
 
 Telegram::Bot::Client.run(token) do |bot|
@@ -11,7 +11,7 @@ Telegram::Bot::Client.run(token) do |bot|
     case message.text
       when '/start'
         bot.api.send_message(chat_id: message.chat.id,
-                             text: "Hello, #{message.from.first_name}. My bot will trade on livecoin and inform you.\n Wanna susbscribe?",
+                             text: "Hello, #{message.chat.id}. My bot will trade on livecoin and inform you.\n Wanna susbscribe?",
                              reply_markup: answers
         )
 

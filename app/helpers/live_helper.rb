@@ -5,20 +5,20 @@ module LiveHelper
   require "net/http"
   require 'net/https'
 
-  TG_TOKEN = '469426190:AAEmNc3nBLSzAxemTs4ovvTccjM-MSwPUHI'
+  TG_TOKEN = '535589013:AAF_Bm3KEcRMpUZ3A7jKN0SJxWGrctIqyGA'
 
   API_ROOT = 'https://api.livecoin.net'
 
-  API_KEY = 'bsTGqan5wbXXTvKHq14GYSdB3GmEdPBr'
-  SECRET_KEY = '7AhKzGKUeSSZu6TxHYEZfVn6wjyuS3zW'
+  API_KEY = 'sJeBmPvCeumBfSN5ZHzEaFDpAyDtbn8z'
+  SECRET_KEY = 'xREPFc23szdPDHKbgDz3QeE3uUXre29Z'
 
-  EXCHANGE = :bittrex
-  BTC_INIT = 0.00186976
+  EXCHANGE = :livecoin
+  BTC_INIT = 0.00298066
   SATOSHI = 0.00000001
-  TRADE_PAIRS_COUNT = 7
+  TRADE_PAIRS_COUNT = 0
   MIN_CURRENCY_PRICE = 0.0000001 # 10 satoshi
-  MIN_ORDER_PRICE = 0.00015 # 10000 satoshi
-  MIN_PROFIT = 1.5 # 3%
+  MIN_ORDER_PRICE = 0.0001 # 10000 satoshi
+  MIN_PROFIT = 2 # 3%
   LOSS_TIME = 1.day
 
   def ranking
@@ -100,7 +100,7 @@ module LiveHelper
   def get_current_balance_in_btc(total_balance)
     total_btc_count = total_balance.find { |cur| cur["currency"] == "BTC" }["value"]
 
-    total_balance.reject { |cur| cur["currency"] == "BTC" }.reject { |cur| cur["currency"] == "OTN" }.each do |cur|
+    total_balance.reject { |cur| cur["currency"] == "BTC" }.reject { |cur| cur["currency"] == "USD" }.each do |cur|
       current_cur_price = currency_info("#{cur["currency"]}/BTC")["last"]
       current_cur_balance = current_cur_price * cur["value"]
       total_btc_count = total_btc_count + current_cur_balance
