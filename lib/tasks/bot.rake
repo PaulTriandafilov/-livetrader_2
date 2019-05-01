@@ -3,7 +3,6 @@ require "#{Rails.root}/app/helpers/live_helper"
 include LiveHelper
 
 
-
 namespace :bot do
 
   desc "test rake task"
@@ -27,6 +26,8 @@ namespace :bot do
 
     ############################## 1. Close all existed orders
     current_orders = get_current_orders["data"]
+                         .reject! { |cur| cur["orderStatus"] == "EXECUTED" }
+                         .reject! { |cur| cur["orderStatus"] == "CANCELLED" }
     if current_orders.nil?
       RESULT[:closed] << "- Открытых ордеров нету"
     else
@@ -92,10 +93,10 @@ namespace :bot do
             RESULT[:bought] << "ERROR: #{pair} - #{resp["errorMessage"]}"
           else
             bid_price = current_bid + SATOSHI
+
             price = sprintf("%.8f", bid_price).to_f
 
-            quantity = MIN_ORDER_PRICE / price
-
+            quantity = sprintf("%.8f", (MIN_ORDER_PRICE / price)).to_f
             resp = buy_order(pair, price, quantity)
 
             if resp["success"]
@@ -119,5 +120,14 @@ namespace :bot do
 
     ############################## Send state into tg
     send_tg(args[:mode])
+  end
+
+  task :start do
+    10.times do
+      Rake::Task['bot:run'].reenable
+      Rake::Task['bot:run'].invoke
+
+      sleep 120
+    end
   end
 end

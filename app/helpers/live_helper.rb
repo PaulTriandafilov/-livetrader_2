@@ -15,9 +15,10 @@ module LiveHelper
   EXCHANGE = :livecoin
   BTC_INIT = 0.00298066
   SATOSHI = 0.00000001
-  TRADE_PAIRS_COUNT = 0
-  MIN_CURRENCY_PRICE = 0.0000001 # 10 satoshi
-  MIN_ORDER_PRICE = 0.0001 # 10000 satoshi
+  TRADE_PAIRS_COUNT = 8
+  MIN_CURRENCY_PRICE = 0.000001 # 100 satoshi
+  MAX_CURRENCY_PRICE = 0.01 # 10000 satoshi
+  MIN_ORDER_PRICE = 0.0002 # 10000 satoshi
   MIN_PROFIT = 2 # 3%
   LOSS_TIME = 1.day
 
@@ -27,6 +28,7 @@ module LiveHelper
     data = currency_info
     data.select! { |cur| cur["symbol"].include?("/BTC") }
     data.reject! { |cur| cur["last"] <= MIN_CURRENCY_PRICE }
+    data.reject! { |cur| cur["last"] >= MAX_CURRENCY_PRICE }
     data.reject! { |cur| cur["symbol"] == "OTN/BTC" } # Reject OTN
 
     data.each do |cur|

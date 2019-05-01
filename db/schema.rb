@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20171124125848) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "balances", force: :cascade do |t|
     t.string "symbol"
     t.float "count"
