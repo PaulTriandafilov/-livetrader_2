@@ -122,12 +122,9 @@ namespace :bot do
     send_tg(args[:mode])
   end
 
-  task :start do
-    10.times do
+  task :run_2 do
       Rake::Task['bot:run'].reenable
       Rake::Task['bot:run'].invoke
-
-      sleep 120
     end
   end
 end
