@@ -64,7 +64,7 @@ namespace :bot do
           current_ask = currency_info("#{cur["currency"]}/BTC")["best_ask"] - SATOSHI
           current_price = sprintf("%.8f", current_ask).to_f
 
-          if do_we_have_profit?(bought_data[:price], current_price)
+          if do_we_have_profit?(bought_data[:price], current_price) || do_we_have_loss?(bought_data[:price], current_price)
             resp = sell_order("#{cur["currency"]}/BTC", current_price, bought_data[:count])
             if resp["success"]
               RESULT[:sold] << "- Поставил ордер на продажу #{cur["currency"]} по цене #{current_price}"

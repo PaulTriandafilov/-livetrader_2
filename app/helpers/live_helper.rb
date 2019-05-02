@@ -20,6 +20,8 @@ module LiveHelper
   MAX_CURRENCY_PRICE = 0.01 # 10000 satoshi
   MIN_ORDER_PRICE = 0.0002 # 10000 satoshi
   MIN_PROFIT = 2 # 3%
+  MIN_LOSS = -5 # 10%
+  MAX_LOSS = -100 # 15%
   LOSS_TIME = 1.day
 
   def ranking
@@ -91,6 +93,11 @@ module LiveHelper
 
   def do_we_have_profit?(bought_price, current_price)
     ((current_price - bought_price)/bought_price * 100) > MIN_PROFIT
+  end
+
+  def do_we_have_loss?(bought_price, current_price)
+    ((current_price - bought_price)/bought_price * 100) < MIN_LOSS &&
+        ((current_price - bought_price)/bought_price * 100) > MAX_LOSS
   end
 
   def get_bought_transaction(cur)
