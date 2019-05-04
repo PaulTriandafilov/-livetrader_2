@@ -61,13 +61,29 @@ namespace :bot do
         if bought_data.nil?
           RESULT[:sold] << "ERROR: не могу найти транзакцию на покупку"
         else
-          current_ask = currency_info("#{cur["currency"]}/BTC")["best_ask"] - SATOSHI
-          current_price = sprintf("%.8f", current_ask).to_f
+          resp = currency_info("#{cur["currency"]}/BTC")
+          current_ask = resp["best_ask"] - SATOSHI
+          current_bid = resp["best_bid"] + SATOSHI
+          current_ask_price = sprintf("%.8f", current_ask).to_f
+          current_bid_price = sprintf("%.8f", current_bid).to_f
 
-          if do_we_have_profit?(bought_data[:price], current_price) || do_we_have_loss?(bought_data[:price], current_price)
-            resp = sell_order("#{cur["currency"]}/BTC", current_price, bought_data[:count])
+          if do_we_have_profit?(bought_data[:price], current_ask_price) || do_we_have_loss?(bought_data[:price], current_ask_price)
+            resp = sell_order("#{cur["currency"]}/BTC", current_ask_price, bought_data[:count])
             if resp["success"]
-              RESULT[:sold] << "- Поставил ордер на продажу #{cur["currency"]} по цене #{current_price}"
+              RESULT[:sold] << "- Поставил ордер на продажу #{cur["currency"]} по цене #{current_ask_price}"
+
+            elsif resp["exception"] == "insufficient funds"
+              quantity = MIN_ORDER_PRICE / current_bid_price
+              resp = buy_order("#{cur["currency"]}/BTC", current_bid_price, quantity)
+              if resp["success"]
+                buy_tran = BuyOrder.where(currency_pair: "#{cur["currency"]}/BTC").last
+                buy_tran_count = buy_tran.count
+                buy_tran.update_attributes(count: quantity + buy_tran_count)
+                RESULT[:bought] << "- Поставил ордер на докупку #{cur["currency"]} по цене #{current_bid_price} в кол-ве #{quantity}.}"
+              else
+                RESULT[:bought] << "- ERROR: не смог поставить ордер на докупку #{cur["currency"]}: #{resp["exception"]}"
+              end
+
             else
               RESULT[:sold] << "ERROR: не смог поставить ордер на продажу #{cur["currency"]}: #{resp["exception"]}"
             end
