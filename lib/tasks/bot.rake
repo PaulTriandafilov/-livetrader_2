@@ -73,7 +73,7 @@ namespace :bot do
               RESULT[:sold] << "- Поставил ордер на продажу #{cur["currency"]} по цене #{current_ask_price}"
 
             elsif resp["exception"] == "insufficient funds"
-              quantity = MIN_ORDER_PRICE / current_bid_price
+              quantity = sprintf("%.8f", (MIN_ORDER_PRICE / current_bid_price)).to_f
               resp = buy_order("#{cur["currency"]}/BTC", current_bid_price, quantity)
               if resp["success"]
                 buy_tran = BuyOrder.where(currency_pair: "#{cur["currency"]}/BTC").last
