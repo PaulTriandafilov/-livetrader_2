@@ -125,7 +125,7 @@ namespace :bot do
       Rake::Task['bot:run'].reenable
       Rake::Task['bot:run'].invoke
 
-      sleep 60
+      sleep 20
     end
   end
 end
