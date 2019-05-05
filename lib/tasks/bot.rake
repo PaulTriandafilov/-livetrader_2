@@ -137,7 +137,7 @@ namespace :bot do
   end
 
   task :start do
-    100.times do
+    1000.times do
       Rake::Task['bot:run'].reenable
       Rake::Task['bot:run'].invoke
 
