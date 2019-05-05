@@ -8,7 +8,7 @@ namespace :bot do
   desc "test rake task"
   task :run, [:mode] => :environment do |t, args|
 
-    RESULT = {start: ["1. ЗАПУСКАЮСЬ. #{DateTime.now.strftime("%m/%d/%Y at %I:%M%p")}. #{EXCHANGE.to_s.upcase} \n ---------------"],
+    RESULT = {start: [],
               closed: ["2. ЗАКРЫВАЮ ОРДЕРА:"],
               sold: ["3. ВЫСТАВЛЯЮ ОРДЕРА НА ПРОДАЖУ:"],
               bought: ["4. ВЫСТАВЛЯЮ ОРДЕРА НА ПОКУПКУ:"],
