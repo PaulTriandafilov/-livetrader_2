@@ -88,8 +88,8 @@
       <file leaf-file-name="bot.rake" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/tasks/bot.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26530612">
-              <caret line="141" column="2" selection-start-line="141" selection-start-column="2" selection-end-line="141" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.2244898">
+              <caret line="139" column="6" selection-start-line="139" selection-start-column="0" selection-end-line="142" selection-end-column="4" />
               <folding>
                 <element signature="e#172#5460#0" expanded="false" />
                 <element signature="e#190#5454#0" expanded="false" />
@@ -1517,8 +1517,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/tasks/bot.rake">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26530612">
-          <caret line="141" column="2" selection-start-line="141" selection-start-column="2" selection-end-line="141" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.2244898">
+          <caret line="139" column="6" selection-start-line="139" selection-start-column="0" selection-end-line="142" selection-end-column="4" />
           <folding>
             <element signature="e#172#5460#0" expanded="false" />
             <element signature="e#190#5454#0" expanded="false" />

@@ -137,7 +137,9 @@ namespace :bot do
   end
 
   task :start do
+=begin
     Rake::Task['bot:run'].reenable
     Rake::Task['bot:run'].invoke
+=end
   end
 end
