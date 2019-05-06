@@ -89,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/lib/tasks/bot.rake">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.2244898">
-              <caret line="139" column="6" selection-start-line="139" selection-start-column="0" selection-end-line="142" selection-end-column="4" />
+              <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="140" selection-end-column="32" />
               <folding>
                 <element signature="e#172#5460#0" expanded="false" />
                 <element signature="e#190#5454#0" expanded="false" />
@@ -1518,7 +1518,7 @@
     <entry file="file://$PROJECT_DIR$/lib/tasks/bot.rake">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2244898">
-          <caret line="139" column="6" selection-start-line="139" selection-start-column="0" selection-end-line="142" selection-end-column="4" />
+          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="140" selection-end-column="32" />
           <folding>
             <element signature="e#172#5460#0" expanded="false" />
             <element signature="e#190#5454#0" expanded="false" />
