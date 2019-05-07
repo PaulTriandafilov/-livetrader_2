@@ -121,7 +121,7 @@ namespace :bot do
             resp = buy_order(pair, price, quantity)
 
             if resp["success"]
-              BuyOrder.where(currency_pair: "#{cur["currency"]}/BTC").delete_all
+              BuyOrder.where(currency_pair: pair).delete_all
               BuyOrder.create(currency_pair: pair, count: quantity, price: price, is_done: false)
               current_btc_balance = current_btc_balance - 1.0018 * MIN_ORDER_PRICE
               pairs_trade = pairs_trade - 1
