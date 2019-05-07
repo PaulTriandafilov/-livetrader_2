@@ -61,6 +61,12 @@ namespace :bot do
         if bought_data.nil?
           RESULT[:sold] << "ERROR: не могу найти транзакцию на покупку"
         else
+          real_coins_count = cur["value"]
+          if real_coins_count != bought_data[:count]
+            BuyOrder.where(currency_pair: "#{cur["currency"]}/BTC").last.update_attributes(count: real_coins_count)
+            bought_data[:count] = real_coins_count
+          end
+
           resp = currency_info("#{cur["currency"]}/BTC")
           current_ask = resp["best_ask"] - SATOSHI
           current_bid = resp["best_bid"] + SATOSHI
@@ -68,7 +74,6 @@ namespace :bot do
           current_bid_price = sprintf("%.8f", current_bid).to_f
 
           if do_we_have_profit?(bought_data[:price], current_ask_price) || do_we_have_loss?(bought_data[:price], current_ask_price)
-            puts("#{cur["currency"]}/BTC - #{current_ask_price} - #{bought_data[:count]}")
             resp = sell_order("#{cur["currency"]}/BTC", current_ask_price, bought_data[:count])
             if resp["success"]
               RESULT[:sold] << "- Поставил ордер на продажу #{cur["currency"]} по цене #{current_ask_price}"
