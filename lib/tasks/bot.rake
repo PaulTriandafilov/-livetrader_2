@@ -71,7 +71,7 @@ namespace :bot do
             resp = sell_order("#{cur["currency"]}/BTC", current_ask_price, bought_data[:count])
             if resp["success"]
               RESULT[:sold] << "- Поставил ордер на продажу #{cur["currency"]} по цене #{current_ask_price}"
-=begin
+
             elsif resp["exception"] == "insufficient funds"
               quantity = sprintf("%.8f", (MIN_ORDER_PRICE / current_bid_price)).to_f
               resp = buy_order("#{cur["currency"]}/BTC", current_bid_price, quantity)
@@ -83,8 +83,8 @@ namespace :bot do
               else
                 RESULT[:bought] << "- ERROR: не смог поставить ордер на докупку #{cur["currency"]}: #{resp["exception"]}"
               end
-=end
             else
+
               RESULT[:sold] << "ERROR: не смог поставить ордер на продажу #{cur["currency"]}: #{resp["exception"]}"
             end
           end
@@ -137,7 +137,9 @@ namespace :bot do
   end
 
   task :start do
+=begin
     Rake::Task['bot:run'].reenable
     Rake::Task['bot:run'].invoke
+=end
   end
 end
