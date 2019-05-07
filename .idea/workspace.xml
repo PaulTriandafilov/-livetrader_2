@@ -39,8 +39,8 @@
       <file leaf-file-name="bot.rake" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/tasks/bot.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3877551">
-              <caret line="122" column="30" selection-start-line="122" selection-start-column="30" selection-end-line="122" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.6938776">
+              <caret line="128" column="107" selection-start-line="128" selection-start-column="107" selection-end-line="128" selection-end-column="107" />
               <folding />
             </state>
           </provider>
@@ -726,8 +726,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/tasks/bot.rake">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3877551">
-          <caret line="122" column="30" selection-start-line="122" selection-start-column="30" selection-end-line="122" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.6938776">
+          <caret line="128" column="107" selection-start-line="128" selection-start-column="107" selection-end-line="128" selection-end-column="107" />
           <folding />
         </state>
       </provider>

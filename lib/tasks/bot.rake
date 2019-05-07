@@ -86,7 +86,7 @@ namespace :bot do
                 buy_tran = BuyOrder.where(currency_pair: "#{cur["currency"]}/BTC").last
                 buy_tran_count = buy_tran.count
                 buy_tran.update_attributes(count: quantity + buy_tran_count)
-                RESULT[:bought] << "- Поставил ордер на докупку #{cur["currency"]} по цене #{current_bid_price} в кол-ве #{quantity}.}"
+                RESULT[:bought] << "- Поставил ордер на докупку #{cur["currency"]} по цене #{current_bid_price} в кол-ве #{quantity}"
               else
                 RESULT[:bought] << "- ERROR: не смог поставить ордер на докупку #{cur["currency"]}: #{resp["exception"]}"
               end
@@ -126,7 +126,7 @@ namespace :bot do
               current_btc_balance = current_btc_balance - 1.0018 * MIN_ORDER_PRICE
               pairs_trade = pairs_trade - 1
 
-              RESULT[:bought] << "- Поставил ордер на покупку #{pair} по цене #{price} в кол-ве #{quantity}. #{EXCHANGE.to_s.upcase}"
+              RESULT[:bought] << "- Поставил ордер на покупку #{pair} по цене #{price} в кол-ве #{quantity}"
             else
               RESULT[:bought] << "ERROR: не смог поставить ордер на покупку #{pair}: #{resp["exception"]}"
             end
