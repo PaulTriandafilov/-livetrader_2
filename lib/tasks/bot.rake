@@ -78,7 +78,7 @@ namespace :bot do
             if resp["success"]
               RESULT[:sold] << "- Поставил ордер на продажу #{cur["currency"]} по цене #{current_ask_price}"
 
-            elsif resp["exception"] == "insufficient funds"
+            elsif resp["exception"] == "insufficient funds" || resp["exception"] == "|Minimal amount is {PARAM:0} BTC|0.0001"
               quantity = sprintf("%.8f", (MIN_ORDER_PRICE / current_bid_price)).to_f
               resp = buy_order("#{cur["currency"]}/BTC", current_bid_price, quantity)
               if resp["success"]
