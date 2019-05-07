@@ -47,6 +47,7 @@ namespace :bot do
     available_coins = get_balances.select { |cur| cur["type"] == "available" && cur["value"] > 0.0 } # array oh hashes
     available_coins.reject! { |cur| cur["currency"] == "OTN" } # reject my sweet otns
     available_coins.reject! { |cur| cur["currency"] == "BTC" } # reject btc
+    available_coins.reject! { |cur| cur["currency"] == "USD" }
 
     ############################## 4. Reject existing in balance pairs from trade_pairs
     unless available_coins.empty?
@@ -143,9 +144,7 @@ namespace :bot do
   end
 
   task :start do
-=begin
     Rake::Task['bot:run'].reenable
     Rake::Task['bot:run'].invoke
-=end
   end
 end
