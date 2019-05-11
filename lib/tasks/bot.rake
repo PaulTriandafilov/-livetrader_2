@@ -144,7 +144,7 @@ namespace :bot do
     ending = Time.now
     elapsed = (ending - starting)
 
-    RESULT[:current_balance] << "elapsed time = #{elapsed}"
+    #RESULT[:current_balance] << "elapsed time = #{elapsed}"
     ############################## Send state into tg
     send_tg(args[:mode])
   end
