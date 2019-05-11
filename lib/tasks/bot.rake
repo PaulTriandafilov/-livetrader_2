@@ -143,7 +143,7 @@ namespace :bot do
 
     ending = Time.now
 
-    elapsed = (ending - starting) * 1000
+    elapsed = (ending - starting)
 
     RESULT[:current_balance] << "elapsed time = #{elapsed}"
     ############################## Send state into tg
@@ -204,11 +204,9 @@ namespace :bot do
     Rake::Task['bot:run'].reenable
     Rake::Task['bot:run'].invoke
 
-=begin
-    20.times do
+    10.times do
       Rake::Task['bot:updater'].reenable
       Rake::Task['bot:updater'].invoke
     end
-=end
   end
 end

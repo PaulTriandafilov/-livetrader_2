@@ -132,7 +132,6 @@ module LiveHelper
       RESULT[:current_balance] << "#{balance["currency"]} в кол-ве #{balance["value"]} (#{profit}%)"
     end
 
-    RESULT[:current_balance] << "--------"
     btc_balance = get_current_balance_in_btc(total_balance)
     RESULT[:start] << "1. (#{((btc_balance - BTC_INIT)/BTC_INIT * 100).round(2)}%) - #{DateTime.now.strftime("%m/%d/%Y at %I:%M%p")}"
     RESULT[:current_balance] << "--------"
