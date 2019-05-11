@@ -142,7 +142,6 @@ namespace :bot do
     current_state_of_wallet
 
     ending = Time.now
-
     elapsed = (ending - starting)
 
     RESULT[:current_balance] << "elapsed time = #{elapsed}"
@@ -205,8 +204,13 @@ namespace :bot do
     Rake::Task['bot:run'].invoke
 
     10.times do
+      starting = Time.now
       Rake::Task['bot:updater'].reenable
       Rake::Task['bot:updater'].invoke
+      ending = Time.now
+      elapsed = (ending - starting)
+
+      puts "----" + elapsed
     end
   end
 end
