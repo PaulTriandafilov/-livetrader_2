@@ -7,6 +7,7 @@ namespace :bot do
 
   desc "test rake task"
   task :run, [:mode] => :environment do |t, args|
+    starting = Time.now
 
     RESULT = {start: [],
               closed: ["2. ЗАКРЫВАЮ ОРДЕРА:"],
@@ -140,6 +141,11 @@ namespace :bot do
     ############################## Request current state of wallet
     current_state_of_wallet
 
+    ending = Time.now
+
+    elapsed = (ending - starting) * 1000
+
+    RESULT[:current_balance] << "elapsed time = #{elapsed}"
     ############################## Send state into tg
     send_tg(args[:mode])
   end
