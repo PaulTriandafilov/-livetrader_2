@@ -144,8 +144,65 @@ namespace :bot do
     send_tg(args[:mode])
   end
 
+  task :updater, :environment do
+    current_orders = get_current_orders["data"]
+
+    if !current_orders.empty?
+      sell_orders = current_orders.select { |order| order["type"] == "LIMIT_SELL" }
+
+      if sell_orders.empty?
+        puts "Нету открытых ордеров на продажу"
+      else
+        sell_orders.each do |order|
+          order_id = order["id"]
+          order_market = order["currencyPair"]
+          order_price = order["price"]
+          order_count = order["quantity"]
+
+          cur_inf_ = currency_info(order_market)
+
+          unless cur_inf_.nil?
+            cur_inf = cur_inf_
+
+            current_price = cur_inf["best_ask"]
+            current_ask_price = sprintf("%.8f", current_price).to_f
+
+            profit = (current_ask_price + SATOSHI) * order_count
+
+            if profit > 1.02 * MIN_ORDER_PRICE || (profit < 0.95 * MIN_ORDER_PRICE)
+              if order_price > current_ask_price
+                cancel_order(order_market, order_id)
+
+                resp = sell_order(order_market, (current_ask_price - SATOSHI), order_count)
+
+                if resp["success"]
+                  puts "Успешно выставил новый ордер на #{order_market} по #{(current_ask_price - SATOSHI)}"
+                else
+                  puts "ERROR: не смог поставить ордер на докупку #{order_market}: #{resp["exception"]}"
+                end
+              else
+                puts "Цена и так лучшая"
+              end
+            else
+              puts "Уже нет смысла что-то менять"
+            end
+          end
+        end
+      end
+    else
+      puts "Нету открытых ордеров"
+    end
+  end
+
   task :start do
     Rake::Task['bot:run'].reenable
     Rake::Task['bot:run'].invoke
+
+=begin
+    20.times do
+      Rake::Task['bot:updater'].reenable
+      Rake::Task['bot:updater'].invoke
+    end
+=end
   end
 end
