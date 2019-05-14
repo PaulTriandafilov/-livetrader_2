@@ -153,22 +153,16 @@ namespace :bot do
     current_orders = get_current_orders["data"]
 
     if !current_orders.empty?
-      sell_orders = current_orders.select { |order| order["type"] == "LIMIT_SELL" }
+      current_orders.each do |order|
+        order_id = order["id"]
+        order_market = order["currencyPair"]
+        order_price = order["price"]
+        order_count = order["quantity"]
 
-      if sell_orders.empty?
-        puts "Нету открытых ордеров на продажу"
-      else
-        sell_orders.each do |order|
-          order_id = order["id"]
-          order_market = order["currencyPair"]
-          order_price = order["price"]
-          order_count = order["quantity"]
+        cur_inf = currency_info(order_market)
 
-          cur_inf_ = currency_info(order_market)
-
-          unless cur_inf_.nil?
-            cur_inf = cur_inf_
-
+        if order["type"] == "LIMIT_SELL"
+          unless cur_inf.nil?
             current_price = cur_inf["best_ask"]
             current_ask_price = sprintf("%.8f", current_price).to_f
 
@@ -181,7 +175,7 @@ namespace :bot do
                 resp = sell_order(order_market, '%.8f' % (current_ask_price - SATOSHI), order_count)
 
                 if resp["success"]
-                  puts "Успешно выставил новый ордер на #{order_market} по #{(current_ask_price - SATOSHI)}"
+                  puts "Успешно выставил новый ордер на продажу #{order_market} по #{(current_ask_price - SATOSHI)}"
                 else
                   puts "ERROR: не смог поставить ордер на докупку #{order_market}: #{resp["exception"]}"
                 end
@@ -190,6 +184,28 @@ namespace :bot do
               end
             else
               puts "Уже нет смысла что-то менять"
+            end
+          end
+        elsif order["type"] == "LIMIT_BUY"
+          unless cur_inf.nil?
+            current_price = cur_inf["best_bid"]
+            current_bid_price = sprintf("%.8f", current_price).to_f
+
+            if order_price < current_bid_price
+              cancel_order(order_market, order_id)
+
+              price = '%.8f' % (current_bid_price + SATOSHI)
+              quantity = sprintf("%.8f", (MIN_ORDER_PRICE / price)).to_f
+              resp = buy_order(order_market, price, quantity)
+
+              if resp["success"]
+                BuyOrder.where(currency_pair: order_market).delete_all
+                BuyOrder.create(currency_pair: order_market, count: quantity, price: price, is_done: false)
+
+                puts "Успешно выставил новый ордер на покупку #{order_market} по #{price}"
+              else
+                puts "ERROR: не смог поставить новый ордер на покупку #{order_market}: #{resp["exception"]}"
+              end
             end
           end
         end
