@@ -180,7 +180,7 @@ namespace :bot do
                   puts "ERROR: не смог поставить ордер на докупку #{order_market}: #{resp["exception"]}"
                 end
               else
-                puts "Цена и так лучшая"
+                #puts "Цена и так лучшая"
               end
             else
               puts "Уже нет смысла что-то менять"
@@ -189,12 +189,11 @@ namespace :bot do
         elsif order["type"] == "LIMIT_BUY"
           unless cur_inf.nil?
             current_price = cur_inf["best_bid"]
-            current_bid_price = sprintf("%.8f", current_price).to_f
 
-            if order_price < current_bid_price
+            if order_price < current_price
               cancel_order(order_market, order_id)
 
-              price = '%.8f' % (current_bid_price + SATOSHI)
+              price = current_price + SATOSHI
               quantity = sprintf("%.8f", (MIN_ORDER_PRICE / price)).to_f
               resp = buy_order(order_market, price, quantity)
 
@@ -202,7 +201,7 @@ namespace :bot do
                 BuyOrder.where(currency_pair: order_market).delete_all
                 BuyOrder.create(currency_pair: order_market, count: quantity, price: price, is_done: false)
 
-                puts "Успешно выставил новый ордер на покупку #{order_market} по #{price}"
+                #puts "Успешно выставил новый ордер на покупку #{order_market} по #{price}"
               else
                 puts "ERROR: не смог поставить новый ордер на покупку #{order_market}: #{resp["exception"]}"
               end
