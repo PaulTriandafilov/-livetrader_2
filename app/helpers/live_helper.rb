@@ -119,7 +119,7 @@ module LiveHelper
 
   def current_state_of_wallet
     total_balance = get_balances.select { |coins| coins["type"] == "total" && coins["value"] > 0.0 }
-    total_balance.each do |balance|
+    total_balance.each_with_index  do |balance, i|
       bought_data = get_bought_transaction(balance)
       if bought_data.nil?
         profit = "-"
@@ -129,7 +129,7 @@ module LiveHelper
         profit = ((current_price - bought_data[:price])/bought_data[:price] * 100).round(2)
       end
 
-      RESULT[:current_balance] << "#{balance["currency"]} в кол-ве #{balance["value"]} (#{profit}%)"
+      RESULT[:current_balance] << "#{i}. #{balance["currency"]} в кол-ве #{balance["value"]} (#{profit}%)"
     end
 
     btc_balance = get_current_balance_in_btc(total_balance)
