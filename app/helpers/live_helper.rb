@@ -18,7 +18,7 @@ module LiveHelper
   TRADE_PAIRS_COUNT = 15
   MIN_CURRENCY_PRICE = 0.000001 # 100 satoshi
   MAX_CURRENCY_PRICE = 0.01 # 10000 satoshi
-  MIN_ORDER_PRICE = 0.00015 # 10000 satoshi
+  MIN_ORDER_PRICE = 0.00013 # 10000 satoshi
   MIN_PROFIT = 2 # 3%
   MIN_LOSS = -5 # 10%
   MAX_LOSS = -100 # 15%
