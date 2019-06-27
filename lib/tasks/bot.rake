@@ -215,7 +215,6 @@ namespace :bot do
   end
 
   task :start do
-=begin
     start_run_time = Time.now
     Rake::Task['bot:run'].reenable
     Rake::Task['bot:run'].invoke
@@ -229,6 +228,5 @@ namespace :bot do
       Rake::Task['bot:updater'].reenable
       Rake::Task['bot:updater'].invoke
     end
-=end
   end
 end
