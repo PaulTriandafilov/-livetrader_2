@@ -5,15 +5,15 @@ module LiveHelper
   require "net/http"
   require 'net/https'
 
-  TG_TOKEN = '535589013:AAF_Bm3KEcRMpUZ3A7jKN0SJxWGrctIqyGA'
+  TG_TOKEN = '551911078:AAGnjt8r-y-vWUD3PUpxf-m9F_8xtvIV5ho'
 
   API_ROOT = 'https://api.livecoin.net'
 
-  API_KEY = 'sJeBmPvCeumBfSN5ZHzEaFDpAyDtbn8z'
-  SECRET_KEY = 'xREPFc23szdPDHKbgDz3QeE3uUXre29Z'
+  API_KEY = 'ADcyPHckvCeEESWJsaSSZsDVQgA9SnUj'
+  SECRET_KEY = 'Jj3rUBC6pkx4P2mqH7MaMQvQwFgmct3a'
 
   EXCHANGE = :livecoin
-  BTC_INIT = 0.00298066
+  BTC_INIT = 0.00402609
   SATOSHI = 0.00000001
   TRADE_PAIRS_COUNT = 10
   MIN_CURRENCY_PRICE = 0.000001 # 100 satoshi
@@ -24,12 +24,12 @@ module LiveHelper
   MAX_LOSS = -100 # 15%
   LOSS_TIME = 1.day
 
-  def ranking
+  def ranking(min_cur_price = MIN_CURRENCY_PRICE)
     ranks = {}
 
     data = currency_info
     data.select! { |cur| cur["symbol"].include?("/BTC") }
-    data.reject! { |cur| cur["last"] <= MIN_CURRENCY_PRICE }
+    data.reject! { |cur| cur["last"] <= min_cur_price }
     data.reject! { |cur| cur["last"] >= MAX_CURRENCY_PRICE }
     data.reject! { |cur| cur["symbol"] == "OTN/BTC" } # Reject OTN
 
