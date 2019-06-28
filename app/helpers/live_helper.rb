@@ -15,8 +15,8 @@ module LiveHelper
   EXCHANGE = :livecoin
   BTC_INIT = 0.00402609
   SATOSHI = 0.00000001
-  TRADE_PAIRS_COUNT = 20
-  MIN_CURRENCY_PRICE = 0.0000001 # 100 satoshi
+  TRADE_PAIRS_COUNT = 10
+  MIN_CURRENCY_PRICE = 0.000001 # 100 satoshi
   MAX_CURRENCY_PRICE = 0.01 # 10000 satoshi
   MIN_ORDER_PRICE = 0.00015 # 10000 satoshi
   MIN_PROFIT = 2 # 3%
@@ -42,7 +42,7 @@ module LiveHelper
     ranks.reject! { |_, v| v == Float::INFINITY }
     ranks.reject! { |_, v| v.nan? }
 
-    ranks.sort_by { |_key, value| -value }[10..TRADE_PAIRS_COUNT-1].to_h
+    ranks.sort_by { |_key, value| -value }[10..19].to_h
   end
 
   def ranking_bittrex
