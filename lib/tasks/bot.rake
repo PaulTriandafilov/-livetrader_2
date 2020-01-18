@@ -215,18 +215,5 @@ namespace :bot do
   end
 
   task :start do
-    start_run_time = Time.now
-    Rake::Task['bot:run'].reenable
-    Rake::Task['bot:run'].invoke
-
-    finish_run_time = Time.now
-
-    remain_time = 120 - (finish_run_time - start_run_time) - 10
-
-    start_updater_time = Time.now
-    while (Time.now - start_updater_time) < remain_time
-      Rake::Task['bot:updater'].reenable
-      Rake::Task['bot:updater'].invoke
-    end
   end
 end

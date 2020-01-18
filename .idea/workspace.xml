@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3fb78077-6924-421f-b97f-caa2b0c864ec" name="Default" comment="" />
+    <list default="true" id="3fb78077-6924-421f-b97f-caa2b0c864ec" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/bot.rake" afterPath="$PROJECT_DIR$/lib/tasks/bot.rake" />
+    </list>
     <ignored path="bot.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -27,13 +30,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="live_helper.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="live_helper.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/helpers/live_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67891157">
-              <caret line="44" column="49" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
               <folding>
-                <element signature="e#1327#2530#0" expanded="false" />
                 <element signature="e#1538#1583#0" expanded="false" />
                 <element signature="e#1589#2523#0" expanded="false" />
                 <element signature="e#1690#1733#0" expanded="false" />
@@ -85,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bot.rake" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bot.rake" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/tasks/bot.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="231" column="3" selection-start-line="231" selection-start-column="3" selection-end-line="231" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.24556616">
+              <caret line="216" column="16" selection-start-line="216" selection-start-column="16" selection-end-line="216" selection-end-column="16" />
               <folding>
                 <element signature="e#172#6043#0" expanded="false" />
                 <element signature="e#923#1052#0" expanded="false" />
@@ -145,8 +147,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/tg_bot/tg_bot.rb" />
-        <option value="$PROJECT_DIR$/lib/tasks/bot.rake" />
         <option value="$PROJECT_DIR$/app/helpers/live_helper.rb" />
+        <option value="$PROJECT_DIR$/lib/tasks/bot.rake" />
       </list>
     </option>
   </component>
@@ -158,7 +160,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1424" />
-    <option name="height" value="829" />
+    <option name="height" value="827" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -185,8 +187,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -239,7 +240,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -388,10 +390,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1424" height="829" extended-state="0" />
+    <frame x="0" y="23" width="1424" height="827" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23950796" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2431259" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -434,7 +436,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1327#2530#0" expanded="false" />
             <element signature="e#1538#1583#0" expanded="false" />
             <element signature="e#1589#2523#0" expanded="false" />
             <element signature="e#1690#1733#0" expanded="false" />
@@ -554,7 +555,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1327#2530#0" expanded="false" />
             <element signature="e#1538#1583#0" expanded="false" />
             <element signature="e#1589#2523#0" expanded="false" />
             <element signature="e#1690#1733#0" expanded="false" />
@@ -674,7 +674,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1327#2530#0" expanded="false" />
             <element signature="e#1538#1583#0" expanded="false" />
             <element signature="e#1589#2523#0" expanded="false" />
             <element signature="e#1690#1733#0" expanded="false" />
@@ -794,7 +793,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1327#2530#0" expanded="false" />
             <element signature="e#1538#1583#0" expanded="false" />
             <element signature="e#1589#2523#0" expanded="false" />
             <element signature="e#1690#1733#0" expanded="false" />
@@ -914,7 +912,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
           <folding>
-            <element signature="e#1327#2530#0" expanded="false" />
             <element signature="e#1538#1583#0" expanded="false" />
             <element signature="e#1589#2523#0" expanded="false" />
             <element signature="e#1690#1733#0" expanded="false" />
@@ -1034,7 +1031,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1327#2530#0" expanded="false" />
             <element signature="e#1538#1583#0" expanded="false" />
             <element signature="e#1589#2523#0" expanded="false" />
             <element signature="e#1690#1733#0" expanded="false" />
@@ -1147,7 +1143,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1327#2530#0" expanded="false" />
             <element signature="e#1538#1583#0" expanded="false" />
             <element signature="e#1589#2523#0" expanded="false" />
             <element signature="e#1690#1733#0" expanded="false" />
@@ -1260,7 +1255,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1327#2530#0" expanded="false" />
             <element signature="e#1538#1583#0" expanded="false" />
             <element signature="e#1589#2523#0" expanded="false" />
             <element signature="e#1690#1733#0" expanded="false" />
@@ -1453,55 +1447,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/bot.rake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="231" column="3" selection-start-line="231" selection-start-column="3" selection-end-line="231" selection-end-column="3" />
-          <folding>
-            <element signature="e#172#6043#0" expanded="false" />
-            <element signature="e#923#1052#0" expanded="false" />
-            <element signature="e#1181#1311#0" expanded="false" />
-            <element signature="e#1469#1527#0" expanded="false" />
-            <element signature="e#1574#1608#0" expanded="false" />
-            <element signature="e#1660#1694#0" expanded="false" />
-            <element signature="e#1736#1770#0" expanded="false" />
-            <element signature="e#1864#2012#0" expanded="false" />
-            <element signature="e#1921#2004#0" expanded="false" />
-            <element signature="e#1951#2002#0" expanded="false" />
-            <element signature="e#2129#4372#0" expanded="false" />
-            <element signature="e#2186#4363#0" expanded="false" />
-            <element signature="e#2292#4353#0" expanded="false" />
-            <element signature="e#2449#2672#0" expanded="false" />
-            <element signature="e#2972#4341#0" expanded="false" />
-            <element signature="e#3213#4327#0" expanded="false" />
-            <element signature="e#3653#4177#0" expanded="false" />
-            <element signature="e#4523#5742#0" expanded="false" />
-            <element signature="e#4573#5698#0" expanded="false" />
-            <element signature="e#4594#5688#1" expanded="false" />
-            <element signature="e#4763#5676#0" expanded="false" />
-            <element signature="e#5108#5662#0" expanded="false" />
-            <element signature="e#189#6037#0" expanded="false" />
-            <element signature="e#6075#8371#0" expanded="false" />
-            <element signature="e#6131#8365#0" expanded="false" />
-            <element signature="e#6183#8313#0" expanded="false" />
-            <element signature="e#6403#8303#0" expanded="false" />
-            <element signature="e#6446#7411#1" expanded="false" />
-            <element signature="e#6661#7397#0" expanded="false" />
-            <element signature="e#6747#7314#1" expanded="false" />
-            <element signature="e#6954#7235#0" expanded="false" />
-            <element signature="e#7465#8291#1" expanded="false" />
-            <element signature="e#7546#8277#0" expanded="false" />
-            <element signature="e#7825#8261#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/live_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67891157">
-          <caret line="44" column="49" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
           <folding>
-            <element signature="e#1327#2530#0" expanded="false" />
             <element signature="e#1538#1583#0" expanded="false" />
             <element signature="e#1589#2523#0" expanded="false" />
             <element signature="e#1690#1733#0" expanded="false" />
@@ -1548,6 +1498,49 @@
             <element signature="e#7896#8100#0" expanded="false" />
             <element signature="e#8120#8290#0" expanded="false" />
             <element signature="e#8175#8282#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tasks/bot.rake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24556616">
+          <caret line="216" column="16" selection-start-line="216" selection-start-column="16" selection-end-line="216" selection-end-column="16" />
+          <folding>
+            <element signature="e#172#6043#0" expanded="false" />
+            <element signature="e#923#1052#0" expanded="false" />
+            <element signature="e#1181#1311#0" expanded="false" />
+            <element signature="e#1469#1527#0" expanded="false" />
+            <element signature="e#1574#1608#0" expanded="false" />
+            <element signature="e#1660#1694#0" expanded="false" />
+            <element signature="e#1736#1770#0" expanded="false" />
+            <element signature="e#1864#2012#0" expanded="false" />
+            <element signature="e#1921#2004#0" expanded="false" />
+            <element signature="e#1951#2002#0" expanded="false" />
+            <element signature="e#2129#4372#0" expanded="false" />
+            <element signature="e#2186#4363#0" expanded="false" />
+            <element signature="e#2292#4353#0" expanded="false" />
+            <element signature="e#2449#2672#0" expanded="false" />
+            <element signature="e#2972#4341#0" expanded="false" />
+            <element signature="e#3213#4327#0" expanded="false" />
+            <element signature="e#3653#4177#0" expanded="false" />
+            <element signature="e#4523#5742#0" expanded="false" />
+            <element signature="e#4573#5698#0" expanded="false" />
+            <element signature="e#4594#5688#1" expanded="false" />
+            <element signature="e#4763#5676#0" expanded="false" />
+            <element signature="e#5108#5662#0" expanded="false" />
+            <element signature="e#189#6037#0" expanded="false" />
+            <element signature="e#6075#8371#0" expanded="false" />
+            <element signature="e#6131#8365#0" expanded="false" />
+            <element signature="e#6183#8313#0" expanded="false" />
+            <element signature="e#6403#8303#0" expanded="false" />
+            <element signature="e#6446#7411#1" expanded="false" />
+            <element signature="e#6661#7397#0" expanded="false" />
+            <element signature="e#6747#7314#1" expanded="false" />
+            <element signature="e#6954#7235#0" expanded="false" />
+            <element signature="e#7465#8291#1" expanded="false" />
+            <element signature="e#7546#8277#0" expanded="false" />
+            <element signature="e#7825#8261#0" expanded="false" />
           </folding>
         </state>
       </provider>
